@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Categories - TechFixDaily | Browse by Category</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script>tailwind.config={theme:{extend:{fontFamily:{inter:['Inter','sans-serif'],poppins:['Poppins','sans-serif']}}}}</script>
+  <style>
+    body { font-family:'Inter',sans-serif; background:#0a0a1a; color:#e2e8f0; }
+    .glass { background:rgba(255,255,255,0.05); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.1); }
+    .glass-strong { background:rgba(255,255,255,0.08); backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.15); }
+    .gradient-text { background:linear-gradient(135deg,#06b6d4,#7c3aed,#ec4899); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .gradient-text-cyan { background:linear-gradient(135deg,#06b6d4,#22d3ee); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .nav-link { position:relative; }
+    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:linear-gradient(90deg,#06b6d4,#7c3aed); transition:width 0.3s; }
+    .nav-link:hover::after { width:100%; }
+    .tag { display:inline-block; padding:2px 10px; border-radius:999px; font-size:0.7rem; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; }
+    .cat-card { transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275); cursor:pointer; }
+    .cat-card:hover { transform:translateY(-12px) scale(1.02); }
+    .cat-icon-wrap { transition:all 0.3s ease; }
+    .cat-card:hover .cat-icon-wrap { transform:scale(1.15) rotate(5deg); }
+    .glow-btn { box-shadow:0 0 20px rgba(6,182,212,0.4); }
+  </style>
+</head>
+<body class="min-h-screen">
+
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 left-0 right-0 z-50 glass-strong border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-2">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm">TF</div>
+          <span class="text-xl font-bold font-poppins gradient-text-cyan hidden sm:block">TechFix<span class="text-white">Daily</span></span>
+        </a>
+        <div class="hidden md:flex items-center gap-6">
+          <a href="index.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium">Home</a>
+          <a href="fixes.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium">Tech Fixes</a>
+          <a href="tips.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium">Tips & Tricks</a>
+          <a href="categories.html" class="nav-link text-cyan-400 text-sm font-medium">Categories</a>
+          <a href="about.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium">About</a>
+          <a href="contact.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium">Contact</a>
+        </div>
+        <button class="md:hidden glass p-2 rounded-lg" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+          <i data-lucide="menu" class="w-5 h-5 text-slate-300"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden glass border-t border-white/10 px-4 pb-4 pt-2">
+      <div class="flex flex-col gap-3">
+        <a href="index.html" class="text-slate-300 py-2">🏠 Home</a>
+        <a href="fixes.html" class="text-slate-300 py-2">🔧 Tech Fixes</a>
+        <a href="tips.html" class="text-slate-300 py-2">💡 Tips & Tricks</a>
+        <a href="categories.html" class="text-cyan-400 py-2">📁 Categories</a>
+        <a href="about.html" class="text-slate-300 py-2">ℹ️ About</a>
+        <a href="contact.html" class="text-slate-300 py-2">✉️ Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pt-24 pb-16 relative overflow-hidden" style="background:radial-gradient(ellipse at 50% 30%,rgba(6,182,212,0.12) 0%,transparent 60%),#0a0a1a;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <div class="flex items-center justify-center gap-2 text-slate-500 text-sm mb-6">
+        <a href="index.html" class="hover:text-cyan-400">Home</a>
+        <i data-lucide="chevron-right" class="w-4 h-4"></i>
+        <span class="text-cyan-400">Categories</span>
+      </div>
+      <div class="tag bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 mb-4">📁 Browse</div>
+      <h1 class="font-poppins text-5xl font-black text-white mb-4">Browse by <span class="gradient-text">Category</span></h1>
+      <p class="text-slate-400 text-lg max-w-xl mx-auto">Find exactly what you need — organized by platform and topic for quick, targeted fixes.</p>
+    </div>
+  </section>
+
+  <!-- MAIN CATEGORIES -->
+  <section class="pb-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Windows -->
+        <a href="fixes.html" id="windows" class="cat-card glass rounded-3xl overflow-hidden border border-white/10 hover:border-cyan-500/40 block" data-aos="fade-up" data-aos-delay="0">
+          <div class="relative h-48 overflow-hidden" style="background:linear-gradient(135deg,#0891b2,#1d4ed8);">
+            <img src="https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=600&auto=format&fit=crop&q=80" alt="Windows" class="w-full h-full object-cover opacity-40 mix-blend-overlay"/>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="cat-icon-wrap text-7xl">🪟</div>
+            </div>
+            <div class="absolute top-4 right-4 glass px-3 py-1 rounded-full text-white text-xs font-bold">124 Fixes</div>
+          </div>
+          <div class="p-6">
+            <h2 class="text-white font-bold text-2xl font-poppins mb-2">Windows</h2>
+            <p class="text-slate-400 text-sm mb-4">BSOD fixes, slow performance, update errors, driver issues, and everything Windows from XP to 11.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="tag bg-cyan-500/20 text-cyan-400 border border-cyan-500/30">Windows 11</span>
+              <span class="tag bg-cyan-500/20 text-cyan-400 border border-cyan-500/30">BSOD</span>
+              <span class="tag bg-cyan-500/20 text-cyan-400 border border-cyan-500/30">Performance</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Android -->
+        <a href="fixes.html" id="android" class="cat-card glass rounded-3xl overflow-hidden border border-white/10 hover:border-green-500/40 block" data-aos="fade-up" data-aos-delay="80">
+          <div class="relative h-48 overflow-hidden" style="background:linear-gradient(135deg,#16a34a,#15803d);">
+            <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600&auto=format&fit=crop&q=80" alt="Android" class="w-full h-full object-cover opacity-40 mix-blend-overlay"/>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="cat-icon-wrap text-7xl">🤖</div>
+            </div>
+            <div class="absolute top-4 right-4 glass px-3 py-1 rounded-full text-white text-xs font-bold">98 Fixes</div>
+          </div>
+          <div class="p-6">
+            <h2 class="text-white font-bold text-2xl font-poppins mb-2">Android</h2>
+            <p class="text-slate-400 text-sm mb-4">Battery drain, app crashes, storage issues, call problems, and Android-specific solutions for all brands.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="tag bg-green-500/20 text-green-400 border border-green-500/30">Battery</span>
+              <span class="tag bg-green-500/20 text-green-400 border border-green-500/30">Performance</span>
+              <span class="tag bg-green-500/20 text-green-400 border border-green-500/30">Apps</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- macOS -->
+        <a href="fixes.html" id="macos" class="cat-card glass rounded-3xl overflow-hidden border border-white/10 hover:border-pink-500/40 block" data-aos="fade-up" data-aos-delay="160">
+          <div class="relative h-48 overflow-hidden" style="background:linear-gradient(135deg,#db2777,#9333ea);">
+            <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600&auto=format&fit=crop&q=80" alt="macOS" class="w-full h-full object-cover opacity-40 mix-blend-overlay"/>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="cat-icon-wrap text-7xl">🍎</div>
+            </div>
+            <div class="absolute top-4 right-4 glass px-3 py-1 rounded-full text-white text-xs font-bold">76 Fixes</div>
+          </div>
+          <div class="p-6">
+            <h2 class="text-white font-bold text-2xl font-poppins mb-2">macOS</h2>
+            <p class="text-slate-400 text-sm mb-4">MacBook overheating, macOS slowdowns, app compatibility, Time Machine, and Apple-specific fixes.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="tag bg-pink-500/20 text-pink-400 border border-pink-500/30">MacBook</span>
+              <span class="tag bg-pink-500/20 text-pink-400 border border-pink-500/30">Overheating</span>
+              <span class="tag bg-pink-500/20 text-pink-400 border border-pink-500/30">Slowdowns</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Network -->
+        <a href="fixes.html" id="network" class="cat-card glass rounded-3xl overflow-hidden border border-white/10 hover:border-blue-500/40 block" data-aos="fade-up" data-aos-delay="0">
+          <div class="relative h-48 overflow-hidden" style="background:linear-gradient(135deg,#2563eb,#1d4ed8);">
+            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&auto=format&fit=crop&q=80" alt="Network" class="w-full h-full object-cover opacity-40 mix-blend-overlay"/>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="cat-icon-wrap text-7xl">🌐</div>
+            </div>
+            <div class="absolute top-4 right-4 glass px-3 py-1 rounded-full text-white text-xs font-bold">65 Fixes</div>
+          </div>
+          <div class="p-6">
+            <h2 class="text-white font-bold text-2xl font-poppins mb-2">Network & Internet</h2>
+            <p class="text-slate-400 text-sm mb-4">WiFi issues, slow internet, DNS problems, VPN setup, and everything network-related fixed.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="tag bg-blue-500/20 text-blue-400 border border-blue-500/30">WiFi</span>
+              <span class="tag bg-blue-500/20 text-blue-400 border border-blue-500/30">Speed</span>
+              <span class="tag bg-blue-500/20 text-blue-400 border border-blue-500/30">DNS</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Gaming -->
+        <a href="fixes.html" id="gaming" class="cat-card glass rounded-3xl overflow-hidden border border-white/10 hover:border-yellow-500/40 block" data-aos="fade-up" data-aos-delay="80">
+          <div class="relative h-48 overflow-hidden" style="background:linear-gradient(135deg,#d97706,#92400e);">
+            <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=600&auto=format&fit=crop&q=80" alt="Gaming" class="w-full h-full object-cover opacity-40 mix-blend-overlay"/>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="cat-icon-wrap text-7xl">🎮</div>
+            </div>
+            <div class="absolute top-4 right-4 glass px-3 py-1 rounded-full text-white text-xs font-bold">54 Fixes</div>
+          </div>
+          <div class="p-6">
+            <h2 class="text-white font-bold text-2xl font-poppins mb-2">Gaming</h2>
+            <p class="text-slate-400 text-sm mb-4">FPS drops, game crashes, GPU issues, controller problems, and performance optimization for gamers.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="tag bg-yellow-500/20 text-yellow-400 border border-yellow-500/30">FPS</span>
+              <span class="tag bg-yellow-500/20 text-yellow-400 border border-yellow-500/30">GPU</span>
+              <span class="tag bg-yellow-500/20 text-yellow-400 border border-yellow-500/30">Performance</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Security -->
+        <a href="fixes.html" id="security" class="cat-card glass rounded-3xl overflow-hidden border border-white/10 hover:border-red-500/40 block" data-aos="fade-up" data-aos-delay="160">
+          <div class="relative h-48 overflow-hidden" style="background:linear-gradient(135deg,#dc2626,#7f1d1d);">
+            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&auto=format&fit=crop&q=80" alt="Security" class="w-full h-full object-cover opacity-40 mix-blend-overlay"/>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="cat-icon-wrap text-7xl">🔒</div>
+            </div>
+            <div class="absolute top-4 right-4 glass px-3 py-1 rounded-full text-white text-xs font-bold">42 Fixes</div>
+          </div>
+          <div class="p-6">
+            <h2 class="text-white font-bold text-2xl font-poppins mb-2">Security</h2>
+            <p class="text-slate-400 text-sm mb-4">Virus removal, malware fixes, password security, privacy settings, and protecting your digital life.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="tag bg-red-500/20 text-red-400 border border-red-500/30">Malware</span>
+              <span class="tag bg-red-500/20 text-red-400 border border-red-500/30">Privacy</span>
+              <span class="tag bg-red-500/20 text-red-400 border border-red-500/30">Passwords</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- More small categories -->
+      <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <a href="fixes.html" class="cat-card glass rounded-2xl p-4 text-center border border-white/10 hover:border-purple-500/40" data-aos="fade-up">
+          <div class="text-4xl mb-2 cat-icon-wrap inline-block">📱</div>
+          <div class="text-white font-semibold">iOS</div>
+          <div class="text-slate-500 text-xs mt-1">38 fixes</div>
+        </a>
+        <a href="fixes.html" class="cat-card glass rounded-2xl p-4 text-center border border-white/10 hover:border-teal-500/40" data-aos="fade-up" data-aos-delay="60">
+          <div class="text-4xl mb-2 cat-icon-wrap inline-block">🖨️</div>
+          <div class="text-white font-semibold">Printers</div>
+          <div class="text-slate-500 text-xs mt-1">29 fixes</div>
+        </a>
+        <a href="fixes.html" class="cat-card glass rounded-2xl p-4 text-center border border-white/10 hover:border-orange-500/40" data-aos="fade-up" data-aos-delay="120">
+          <div class="text-4xl mb-2 cat-icon-wrap inline-block">☁️</div>
+          <div class="text-white font-semibold">Cloud & Storage</div>
+          <div class="text-slate-500 text-xs mt-1">22 fixes</div>
+        </a>
+        <a href="fixes.html" class="cat-card glass rounded-2xl p-4 text-center border border-white/10 hover:border-cyan-500/40" data-aos="fade-up" data-aos-delay="180">
+          <div class="text-4xl mb-2 cat-icon-wrap inline-block">🖥️</div>
+          <div class="text-white font-semibold">Hardware</div>
+          <div class="text-slate-500 text-xs mt-1">31 fixes</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BANNER -->
+  <section class="py-16 border-y border-white/5" style="background:linear-gradient(135deg,rgba(6,182,212,0.05),rgba(124,58,237,0.05));">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div data-aos="fade-up">
+          <div class="text-4xl font-black gradient-text-cyan font-poppins">500+</div>
+          <div class="text-slate-400 mt-1">Total Fixes</div>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="100">
+          <div class="text-4xl font-black gradient-text font-poppins">10</div>
+          <div class="text-slate-400 mt-1">Categories</div>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="200">
+          <div class="text-4xl font-black gradient-text-cyan font-poppins">Daily</div>
+          <div class="text-slate-400 mt-1">New Fixes Added</div>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="300">
+          <div class="text-4xl font-black gradient-text font-poppins">50K+</div>
+          <div class="text-slate-400 mt-1">Users Helped</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#0a0a1a] border-t border-white/5 py-10">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <a href="index.html" class="text-xl font-bold font-poppins text-white">TechFix<span class="gradient-text-cyan">Daily</span></a>
+      <p class="text-slate-500 text-sm mt-2">© 2025 TechFixDaily. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="fixed bottom-6 right-6 w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white shadow-lg opacity-0 transition-all duration-300 z-50" style="box-shadow:0 0 20px rgba(6,182,212,0.4)">
+    <i data-lucide="arrow-up" class="w-5 h-5"></i>
+  </button>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({duration:600,once:true,offset:60});
+    lucide.createIcons();
+    window.addEventListener('scroll',()=>{
+      const btn=document.getElementById('backToTop');
+      btn.style.opacity=window.scrollY>300?'1':'0';
+    });
+  </script>
+</body>
+</html>

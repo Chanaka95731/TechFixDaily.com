@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service - TechFixDaily</title>
+  <meta name="description" content="TechFixDaily Terms of Service — rules, guidelines, and agreements for using our website." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script>tailwind.config={theme:{extend:{fontFamily:{inter:['Inter','sans-serif'],poppins:['Poppins','sans-serif']}}}}</script>
+  <style>
+    body { font-family:'Inter',sans-serif; background:#0a0a1a; color:#e2e8f0; }
+    .glass { background:rgba(255,255,255,0.05); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.1); }
+    .glass-strong { background:rgba(255,255,255,0.08); backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.15); }
+    .gradient-text { background:linear-gradient(135deg,#06b6d4,#7c3aed,#ec4899); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .gradient-text-cyan { background:linear-gradient(135deg,#06b6d4,#22d3ee); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .nav-link { position:relative; }
+    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:linear-gradient(90deg,#06b6d4,#7c3aed); transition:width 0.3s; }
+    .nav-link:hover::after { width:100%; }
+    .tag { display:inline-block; padding:2px 10px; border-radius:999px; font-size:0.7rem; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; }
+    .policy-content h2 { font-family:'Poppins',sans-serif; font-size:1.35rem; font-weight:800; color:white; margin-top:2.5rem; margin-bottom:0.75rem; padding-bottom:0.5rem; border-bottom:1px solid rgba(255,255,255,0.08); }
+    .policy-content h3 { font-size:1rem; font-weight:700; color:#e2e8f0; margin-top:1.25rem; margin-bottom:0.5rem; }
+    .policy-content p { color:#94a3b8; line-height:1.85; margin-bottom:1rem; font-size:0.95rem; }
+    .policy-content ul { padding-left:1.5rem; color:#94a3b8; margin-bottom:1rem; list-style-type: disc; }
+    .policy-content li { margin-bottom:0.5rem; line-height:1.75; font-size:0.95rem; }
+    .policy-content a { color:#06b6d4; text-decoration:underline; }
+    .policy-content strong { color:#e2e8f0; }
+    .toc-link { display:block; padding:6px 12px; border-radius:8px; color:#94a3b8; font-size:0.825rem; transition:all 0.2s; }
+    .toc-link:hover { background:rgba(6,182,212,0.1); color:#06b6d4; }
+    .highlight-box { background:rgba(124,58,237,0.07); border-left:3px solid #7c3aed; border-radius:0 12px 12px 0; padding:1rem 1.25rem; margin-bottom:1rem; }
+  </style>
+</head>
+<body class="min-h-screen">
+
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 left-0 right-0 z-50 glass-strong border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-2 group">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm shadow-lg group-hover:scale-110 transition-transform">TF</div>
+          <span class="text-xl font-bold font-poppins gradient-text-cyan hidden sm:block">TechFix<span class="text-white">Daily</span></span>
+        </a>
+        <div class="hidden md:flex items-center gap-6">
+          <a href="index.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium transition-colors">Home</a>
+          <a href="fixes.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium transition-colors">Tech Fixes</a>
+          <a href="tips.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium transition-colors">Tips & Tricks</a>
+          <a href="categories.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium transition-colors">Categories</a>
+          <a href="about.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium transition-colors">About</a>
+          <a href="contact.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium transition-colors">Contact</a>
+        </div>
+        <button class="md:hidden glass p-2 rounded-lg" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+          <i data-lucide="menu" class="w-5 h-5 text-slate-300"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden glass border-t border-white/10 px-4 pb-4 pt-2">
+      <div class="flex flex-col gap-3">
+        <a href="index.html" class="text-slate-300 py-2">🏠 Home</a>
+        <a href="fixes.html" class="text-slate-300 py-2">🔧 Tech Fixes</a>
+        <a href="tips.html" class="text-slate-300 py-2">💡 Tips & Tricks</a>
+        <a href="categories.html" class="text-slate-300 py-2">📁 Categories</a>
+        <a href="about.html" class="text-slate-300 py-2">ℹ️ About</a>
+        <a href="contact.html" class="text-slate-300 py-2">✉️ Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pt-24 pb-12 relative overflow-hidden" style="background:radial-gradient(ellipse at 70% 50%,rgba(124,58,237,0.08) 0%,transparent 60%),#0a0a1a;">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="flex items-center gap-2 text-slate-500 text-sm mb-6">
+        <a href="index.html" class="hover:text-cyan-400 transition-colors">Home</a>
+        <i data-lucide="chevron-right" class="w-4 h-4"></i>
+        <span class="text-cyan-400">Terms of Service</span>
+      </div>
+      <div class="tag bg-purple-500/20 text-purple-400 border border-purple-500/30 mb-4">⚖️ Legal</div>
+      <h1 class="font-poppins text-4xl sm:text-5xl font-black text-white mb-4">Terms of <span class="gradient-text">Service</span></h1>
+      <p class="text-slate-400 text-lg max-w-2xl">Please read these terms and conditions carefully before using our website.</p>
+      <div class="flex flex-wrap items-center gap-4 mt-5">
+        <span class="flex items-center gap-2 text-slate-500 text-sm"><i data-lucide="calendar" class="w-4 h-4"></i> Last updated: August 27, 2025</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex gap-12">
+    <!-- Main Content -->
+    <main class="flex-1 min-w-0">
+      <div class="policy-content">
+
+        <h2 id="acceptance">1. Acceptance of Terms</h2>
+        <p>By accessing and using <strong>TechFixDaily.com</strong> ("the Site"), you accept and agree to be bound by the terms and provision of this agreement. In addition, when using this Site's particular services, you shall be subject to any posted guidelines or rules applicable to such services. Any participation in this service will constitute acceptance of this agreement. If you do not agree to abide by the above, please do not use this service.</p>
+
+        <h2 id="disclaimer">2. Informational Purposes & Disclaimer</h2>
+        <div class="highlight-box">
+          <p class="text-slate-300"><strong>Disclaimer:</strong> The content provided on TechFixDaily is for informational and educational purposes only. While we strive to provide accurate, up-to-date, and tested solutions, technology environments vary widely.</p>
+        </div>
+        <ul>
+          <li>We make no warranties, expressed or implied, regarding the effectiveness or safety of any fixes provided.</li>
+          <li><strong>Proceed at your own risk.</strong> We are not liable for any data loss, hardware damage, or system instability that may occur as a result of applying the solutions found on this Site.</li>
+          <li>Always back up your data before making changes to your operating system, registry, or hardware.</li>
+        </ul>
+
+        <h2 id="intellectual-property">3. Intellectual Property Rights</h2>
+        <p>The Site and its original content, features, and functionality are owned by TechFixDaily and are protected by international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.</p>
+        <p>You may not copy, reproduce, distribute, or create derivative works from our articles, guides, or images without explicit prior written permission from us, except for personal, non-commercial use.</p>
+
+        <h2 id="user-conduct">4. User Conduct</h2>
+        <p>You agree to use the Site only for lawful purposes and in a way that does not infringe the rights of, restrict, or inhibit anyone else's use and enjoyment of the Site. Prohibited behavior includes:</p>
+        <ul>
+          <li>Harassing or causing distress or inconvenience to any other user.</li>
+          <li>Transmitting obscene or offensive content.</li>
+          <li>Disrupting the normal flow of dialogue within the Site.</li>
+          <li>Attempting to gain unauthorized access to our servers or systems.</li>
+          <li>Using the site to distribute malware, spam, or malicious code.</li>
+        </ul>
+
+        <h2 id="third-party-links">5. Links to Third-Party Sites</h2>
+        <p>Our Site may contain links to third-party web sites or services that are not owned or controlled by TechFixDaily. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party web sites or services.</p>
+        <p>We strongly advise you to read the terms and conditions and privacy policies of any third-party web sites or services that you visit. Mention of third-party software or tools does not constitute an endorsement unless explicitly stated.</p>
+
+        <h2 id="monetization">6. Monetization and Advertising</h2>
+        <p>TechFixDaily is a free service supported by advertising. We use third-party advertising companies, including Google AdSense, to serve ads when you visit our website. These companies may use aggregated information about your visits to this and other websites in order to provide advertisements about goods and services of interest to you.</p>
+
+        <h2 id="limitation-liability">7. Limitation of Liability</h2>
+        <p>In no event shall TechFixDaily, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from:</p>
+        <ul>
+          <li>Your access to or use of or inability to access or use the Site.</li>
+          <li>Any conduct or content of any third party on the Site.</li>
+          <li>Any content obtained from the Site.</li>
+          <li>Unauthorized access, use or alteration of your transmissions or content.</li>
+        </ul>
+
+        <h2 id="changes-terms">8. Changes to Terms</h2>
+        <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will try to provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p>
+        <p>By continuing to access or use our Site after those revisions become effective, you agree to be bound by the revised terms.</p>
+
+        <h2 id="contact">9. Contact Us</h2>
+        <p>If you have any questions about these Terms, please contact us at <a href="mailto:legal@techfixdaily.com">legal@techfixdaily.com</a>.</p>
+
+      </div>
+    </main>
+
+    <!-- Sidebar: TOC -->
+    <aside class="hidden lg:block w-56 flex-shrink-0">
+      <div class="glass rounded-2xl p-5 border border-white/10 sticky top-24">
+        <h3 class="text-white font-bold text-sm uppercase tracking-wider mb-4">📋 Contents</h3>
+        <nav class="space-y-1">
+          <a href="#acceptance" class="toc-link">1. Acceptance of Terms</a>
+          <a href="#disclaimer" class="toc-link">2. Disclaimer</a>
+          <a href="#intellectual-property" class="toc-link">3. Intellectual Property</a>
+          <a href="#user-conduct" class="toc-link">4. User Conduct</a>
+          <a href="#third-party-links" class="toc-link">5. Third-Party Links</a>
+          <a href="#monetization" class="toc-link">6. Monetization & Ads</a>
+          <a href="#limitation-liability" class="toc-link">7. Limitation of Liability</a>
+          <a href="#changes-terms" class="toc-link">8. Changes to Terms</a>
+          <a href="#contact" class="toc-link">9. Contact Us</a>
+        </nav>
+        <div class="mt-6 pt-4 border-t border-white/10">
+          <a href="privacy.html" class="toc-link flex items-center gap-2">
+            <i data-lucide="shield" class="w-3 h-3"></i> Privacy Policy
+          </a>
+          <a href="contact.html" class="toc-link flex items-center gap-2 mt-1">
+            <i data-lucide="mail" class="w-3 h-3"></i> Contact Us
+          </a>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-[#0a0a1a] border-t border-white/5 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+        <div class="col-span-2 lg:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center text-white font-bold">TF</div>
+            <span class="text-xl font-bold font-poppins text-white">TechFix<span class="gradient-text-cyan">Daily</span></span>
+          </div>
+          <p class="text-slate-400 text-sm leading-relaxed">Your go-to source for daily tech solutions, fixes, and pro tips.</p>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-slate-400 text-sm">
+            <li><a href="index.html" class="hover:text-cyan-400 transition-colors">Home</a></li>
+            <li><a href="fixes.html" class="hover:text-cyan-400 transition-colors">Tech Fixes</a></li>
+            <li><a href="tips.html" class="hover:text-cyan-400 transition-colors">Tips & Tricks</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-4">Company</h4>
+          <ul class="space-y-2 text-slate-400 text-sm">
+            <li><a href="about.html" class="hover:text-cyan-400 transition-colors">About Us</a></li>
+            <li><a href="contact.html" class="hover:text-cyan-400 transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-4">Legal</h4>
+          <ul class="space-y-2 text-slate-400 text-sm">
+            <li><a href="privacy.html" class="hover:text-cyan-400 transition-colors">Privacy Policy</a></li>
+            <li><a href="terms.html" class="text-cyan-400">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-slate-500 text-sm">© 2025 TechFixDaily. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

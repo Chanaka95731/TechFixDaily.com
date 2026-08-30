@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About TechFixDaily - Your Daily Tech Problem Solvers</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script>tailwind.config={theme:{extend:{fontFamily:{inter:['Inter','sans-serif'],poppins:['Poppins','sans-serif']}}}}</script>
+  <style>
+    body { font-family:'Inter',sans-serif; background:#0a0a1a; color:#e2e8f0; }
+    .glass { background:rgba(255,255,255,0.05); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.1); }
+    .glass-strong { background:rgba(255,255,255,0.08); backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.15); }
+    .gradient-text { background:linear-gradient(135deg,#06b6d4,#7c3aed,#ec4899); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .gradient-text-cyan { background:linear-gradient(135deg,#06b6d4,#22d3ee); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .nav-link { position:relative; }
+    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:linear-gradient(90deg,#06b6d4,#7c3aed); transition:width 0.3s; }
+    .nav-link:hover::after { width:100%; }
+    .tag { display:inline-block; padding:2px 10px; border-radius:999px; font-size:0.7rem; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; }
+    .team-card { transition:all 0.3s; }
+    .team-card:hover { transform:translateY(-8px); }
+    .team-card:hover .team-avatar { transform:scale(1.08); }
+    .team-avatar { transition:transform 0.3s; }
+    .stat-counter { font-variant-numeric: tabular-nums; }
+    .timeline-dot { width:12px; height:12px; background:linear-gradient(135deg,#06b6d4,#7c3aed); border-radius:50%; flex-shrink:0; box-shadow:0 0 0 4px rgba(6,182,212,0.15); }
+    .value-card { transition:all 0.3s; }
+    .value-card:hover { border-color:rgba(6,182,212,0.4) !important; transform:translateY(-4px); }
+  </style>
+</head>
+<body class="min-h-screen">
+
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 left-0 right-0 z-50 glass-strong border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-2">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm">TF</div>
+          <span class="text-xl font-bold font-poppins gradient-text-cyan hidden sm:block">TechFix<span class="text-white">Daily</span></span>
+        </a>
+        <div class="hidden md:flex items-center gap-6">
+          <a href="index.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium">Home</a>
+          <a href="fixes.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium">Tech Fixes</a>
+          <a href="tips.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium">Tips & Tricks</a>
+          <a href="categories.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium">Categories</a>
+          <a href="about.html" class="nav-link text-cyan-400 text-sm font-medium">About</a>
+          <a href="contact.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium">Contact</a>
+        </div>
+        <button class="md:hidden glass p-2 rounded-lg" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+          <i data-lucide="menu" class="w-5 h-5 text-slate-300"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden glass border-t border-white/10 px-4 pb-4 pt-2">
+      <div class="flex flex-col gap-3">
+        <a href="index.html" class="text-slate-300 py-2">🏠 Home</a>
+        <a href="fixes.html" class="text-slate-300 py-2">🔧 Tech Fixes</a>
+        <a href="tips.html" class="text-slate-300 py-2">💡 Tips & Tricks</a>
+        <a href="categories.html" class="text-slate-300 py-2">📁 Categories</a>
+        <a href="about.html" class="text-cyan-400 py-2">ℹ️ About</a>
+        <a href="contact.html" class="text-slate-300 py-2">✉️ Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pt-24 pb-20 relative overflow-hidden" style="background:radial-gradient(ellipse at 50% 30%,rgba(124,58,237,0.15) 0%,transparent 60%),#0a0a1a;">
+    <div class="absolute top-20 left-10 w-72 h-72 bg-cyan-500/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-10 w-96 h-96 bg-purple-600/5 rounded-full blur-3xl"></div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+      <div class="flex items-center justify-center gap-2 text-slate-500 text-sm mb-6">
+        <a href="index.html" class="hover:text-cyan-400">Home</a>
+        <i data-lucide="chevron-right" class="w-4 h-4"></i>
+        <span class="text-cyan-400">About</span>
+      </div>
+      <div class="tag bg-purple-500/20 text-purple-400 border border-purple-500/30 mb-4">ℹ️ Our Story</div>
+      <h1 class="font-poppins text-5xl sm:text-6xl font-black text-white mb-6">About <span class="gradient-text">TechFixDaily</span></h1>
+      <p class="text-slate-400 text-xl leading-relaxed max-w-2xl mx-auto">We're a team of tech enthusiasts on a mission: make technology work for everyone. No jargon. No confusing guides. Just clear, working fixes — every single day.</p>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section class="py-20 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div data-aos="fade-right">
+          <div class="tag bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 mb-4">🎯 Our Mission</div>
+          <h2 class="font-poppins text-4xl font-black text-white mb-6">Tech Should Work <span class="gradient-text-cyan">For You</span>, Not Against You</h2>
+          <p class="text-slate-400 leading-relaxed mb-4">Technology can be frustrating. Crashes, errors, slowdowns — we've all been there at 2AM wondering why your computer just decided to stop working. That's why TechFixDaily exists.</p>
+          <p class="text-slate-400 leading-relaxed mb-6">We research, test, and verify every single fix before publishing it. Our team of 8 tech experts spend thousands of hours solving the exact same problems you face — and packaging those solutions in clear, step-by-step guides anyone can follow.</p>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3">
+              <div class="w-6 h-6 bg-cyan-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+                <i data-lucide="check" class="w-3 h-3 text-cyan-400"></i>
+              </div>
+              <span class="text-slate-300">Every fix is tested on real devices before publishing</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-6 h-6 bg-cyan-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+                <i data-lucide="check" class="w-3 h-3 text-cyan-400"></i>
+              </div>
+              <span class="text-slate-300">Written in plain language — no tech degree required</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-6 h-6 bg-cyan-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+                <i data-lucide="check" class="w-3 h-3 text-cyan-400"></i>
+              </div>
+              <span class="text-slate-300">Updated daily with the latest tech issues and solutions</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-6 h-6 bg-cyan-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+                <i data-lucide="check" class="w-3 h-3 text-cyan-400"></i>
+              </div>
+              <span class="text-slate-300">100% free — always. No paywalls, no sign-ups to read.</span>
+            </div>
+          </div>
+        </div>
+        <div class="relative" data-aos="fade-left">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&auto=format&fit=crop&q=80" alt="Team working" class="rounded-3xl w-full h-80 object-cover" />
+          <div class="absolute inset-0 rounded-3xl" style="background:linear-gradient(135deg,rgba(6,182,212,0.2),rgba(124,58,237,0.2));"></div>
+          <div class="absolute -bottom-6 -right-6 glass-strong rounded-2xl p-5 border border-cyan-500/20 max-w-[200px]">
+            <div class="text-4xl font-black gradient-text-cyan font-poppins">50K+</div>
+            <div class="text-slate-300 text-sm font-medium mt-1">Problems Solved</div>
+            <div class="text-slate-500 text-xs">by our community</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="py-16 border-y border-white/5" style="background:linear-gradient(135deg,rgba(6,182,212,0.05),rgba(124,58,237,0.05));">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div data-aos="fade-up">
+          <div class="stat-counter text-5xl font-black gradient-text font-poppins" data-target="500">0</div>
+          <div class="text-slate-400 mt-1">Tech Fixes Published</div>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="100">
+          <div class="stat-counter text-5xl font-black gradient-text-cyan font-poppins" data-target="50000">0</div>
+          <div class="text-slate-400 mt-1">Problems Solved</div>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="200">
+          <div class="stat-counter text-5xl font-black gradient-text font-poppins" data-target="8">0</div>
+          <div class="text-slate-400 mt-1">Expert Writers</div>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="300">
+          <div class="text-5xl font-black gradient-text-cyan font-poppins">4.9★</div>
+          <div class="text-slate-400 mt-1">Average Fix Rating</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12" data-aos="fade-up">
+        <div class="tag bg-yellow-500/20 text-yellow-400 border border-yellow-500/30 mb-3">👥 The Team</div>
+        <h2 class="font-poppins text-4xl font-black text-white">Meet Our <span class="gradient-text">Tech Experts</span></h2>
+        <p class="text-slate-400 mt-2">The passionate people behind every fix you read</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="team-card glass rounded-2xl p-6 border border-white/10 text-center" data-aos="fade-up" data-aos-delay="0">
+          <div class="team-avatar w-20 h-20 mx-auto rounded-2xl overflow-hidden mb-4 border-2 border-cyan-500/30">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&auto=format&fit=crop&q=80" alt="Alex" class="w-full h-full object-cover" />
+          </div>
+          <h3 class="text-white font-bold">Alex Chen</h3>
+          <p class="text-cyan-400 text-sm mb-3">Founder & Windows Expert</p>
+          <p class="text-slate-500 text-xs leading-relaxed">10 years in IT. Solved over 20,000 Windows issues. Hates BSOD more than anyone.</p>
+          <div class="mt-3 flex justify-center gap-2">
+            <span class="tag bg-cyan-500/20 text-cyan-400 border border-cyan-500/30">Windows</span>
+          </div>
+        </div>
+        <div class="team-card glass rounded-2xl p-6 border border-white/10 text-center" data-aos="fade-up" data-aos-delay="80">
+          <div class="team-avatar w-20 h-20 mx-auto rounded-2xl overflow-hidden mb-4 border-2 border-purple-500/30">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&auto=format&fit=crop&q=80" alt="Sarah" class="w-full h-full object-cover" />
+          </div>
+          <h3 class="text-white font-bold">Sarah Kim</h3>
+          <p class="text-purple-400 text-sm mb-3">Mobile & Android Specialist</p>
+          <p class="text-slate-500 text-xs leading-relaxed">Former Google engineer. Expert in Android optimization and mobile security.</p>
+          <div class="mt-3 flex justify-center gap-2">
+            <span class="tag bg-purple-500/20 text-purple-400 border border-purple-500/30">Android</span>
+          </div>
+        </div>
+        <div class="team-card glass rounded-2xl p-6 border border-white/10 text-center" data-aos="fade-up" data-aos-delay="160">
+          <div class="team-avatar w-20 h-20 mx-auto rounded-2xl overflow-hidden mb-4 border-2 border-pink-500/30">
+            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&auto=format&fit=crop&q=80" alt="Marcus" class="w-full h-full object-cover" />
+          </div>
+          <h3 class="text-white font-bold">Marcus Rivera</h3>
+          <p class="text-pink-400 text-sm mb-3">Network & Security Expert</p>
+          <p class="text-slate-500 text-xs leading-relaxed">Certified network engineer. Specializes in WiFi optimization and cybersecurity.</p>
+          <div class="mt-3 flex justify-center gap-2">
+            <span class="tag bg-pink-500/20 text-pink-400 border border-pink-500/30">Network</span>
+          </div>
+        </div>
+        <div class="team-card glass rounded-2xl p-6 border border-white/10 text-center" data-aos="fade-up" data-aos-delay="240">
+          <div class="team-avatar w-20 h-20 mx-auto rounded-2xl overflow-hidden mb-4 border-2 border-yellow-500/30">
+            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=200&auto=format&fit=crop&q=80" alt="Priya" class="w-full h-full object-cover" />
+          </div>
+          <h3 class="text-white font-bold">Priya Patel</h3>
+          <p class="text-yellow-400 text-sm mb-3">macOS & Gaming Specialist</p>
+          <p class="text-slate-500 text-xs leading-relaxed">Apple certified tech. Fixes MacBooks in her sleep and plays games in her free time.</p>
+          <div class="mt-3 flex justify-center gap-2">
+            <span class="tag bg-yellow-500/20 text-yellow-400 border border-yellow-500/30">macOS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="py-20 bg-[#0d0d24] border-y border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12" data-aos="fade-up">
+        <div class="tag bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 mb-3">💎 Our Values</div>
+        <h2 class="font-poppins text-4xl font-black text-white">What We <span class="gradient-text-cyan">Stand For</span></h2>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-6">
+        <div class="value-card glass rounded-2xl p-6 border border-white/10" data-aos="fade-up">
+          <div class="text-4xl mb-4">🎯</div>
+          <h3 class="text-white font-bold text-lg mb-2">Accuracy First</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Every fix is personally tested by our team before publishing. We only publish what actually works — no guesswork, no maybes.</p>
+        </div>
+        <div class="value-card glass rounded-2xl p-6 border border-white/10" data-aos="fade-up" data-aos-delay="100">
+          <div class="text-4xl mb-4">🗣️</div>
+          <h3 class="text-white font-bold text-lg mb-2">Plain Language</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">We write for humans, not engineers. Our guides are clear enough for your grandma to follow — and detailed enough for professionals.</p>
+        </div>
+        <div class="value-card glass rounded-2xl p-6 border border-white/10" data-aos="fade-up" data-aos-delay="200">
+          <div class="text-4xl mb-4">♾️</div>
+          <h3 class="text-white font-bold text-lg mb-2">Always Free</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Great tech help shouldn't cost money. All content on TechFixDaily is free forever. No paywalls, no premium tiers, no BS.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 text-center relative overflow-hidden">
+    <div class="absolute inset-0" style="background:radial-gradient(ellipse at 50% 50%,rgba(6,182,212,0.1),transparent 70%)"></div>
+    <div class="max-w-2xl mx-auto px-4 relative z-10" data-aos="fade-up">
+      <h2 class="font-poppins text-4xl font-black text-white mb-4">Got a <span class="gradient-text">Tech Problem?</span></h2>
+      <p class="text-slate-400 text-lg mb-8">We probably have the fix. Browse our 500+ solutions or search for your specific issue.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="fixes.html" class="glow-btn bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold px-8 py-4 rounded-xl flex items-center justify-center gap-2 hover:opacity-90 transition-all" style="box-shadow:0 0 20px rgba(6,182,212,0.4)">
+          <i data-lucide="wrench" class="w-5 h-5"></i> Browse All Fixes
+        </a>
+        <a href="contact.html" class="glass border border-white/20 text-white font-semibold px-8 py-4 rounded-xl flex items-center justify-center gap-2 hover:border-cyan-500/50 transition-all">
+          <i data-lucide="mail" class="w-5 h-5"></i> Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#0a0a1a] border-t border-white/5 py-10">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <a href="index.html" class="text-xl font-bold font-poppins text-white">TechFix<span class="gradient-text-cyan">Daily</span></a>
+      <p class="text-slate-500 text-sm mt-2">© 2025 TechFixDaily. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="fixed bottom-6 right-6 w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white shadow-lg opacity-0 transition-all duration-300 z-50" style="box-shadow:0 0 20px rgba(6,182,212,0.4)">
+    <i data-lucide="arrow-up" class="w-5 h-5"></i>
+  </button>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({duration:600,once:true,offset:60});
+    lucide.createIcons();
+    window.addEventListener('scroll',()=>{
+      document.getElementById('backToTop').style.opacity=window.scrollY>300?'1':'0';
+    });
+
+    // Animated counters
+    const counters = document.querySelectorAll('.stat-counter');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const target = parseInt(entry.target.dataset.target);
+          let current = 0;
+          const increment = target / 60;
+          const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+              current = target;
+              clearInterval(timer);
+            }
+            entry.target.textContent = target >= 1000
+              ? Math.floor(current).toLocaleString() + '+'
+              : Math.floor(current) + '+';
+          }, 20);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.5});
+    counters.forEach(c => observer.observe(c));
+  </script>
+</body>
+</html>

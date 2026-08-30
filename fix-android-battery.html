@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Android Battery Draining Fast? 7 Real Fixes - TechFixDaily</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script>tailwind.config={theme:{extend:{fontFamily:{inter:['Inter','sans-serif'],poppins:['Poppins','sans-serif']}}}}</script>
+  <style>
+    body { font-family:'Inter',sans-serif; background:#0a0a1a; color:#e2e8f0; }
+    .glass { background:rgba(255,255,255,0.05); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.1); }
+    .glass-strong { background:rgba(255,255,255,0.08); backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.15); }
+    .gradient-text-cyan { background:linear-gradient(135deg,#06b6d4,#22d3ee); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .nav-link { position:relative; }
+    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:linear-gradient(90deg,#06b6d4,#7c3aed); transition:width 0.3s; }
+    .nav-link:hover::after { width:100%; }
+    .tag { display:inline-block; padding:2px 10px; border-radius:999px; font-size:0.7rem; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; }
+    .article-content h2 { font-family:'Poppins',sans-serif; font-size:1.5rem; font-weight:800; color:white; margin-top:2.5rem; margin-bottom:1rem; }
+    .article-content p { color:#94a3b8; line-height:1.8; margin-bottom:1rem; }
+    .article-content ul, .article-content ol { padding-left:1.5rem; color:#94a3b8; margin-bottom:1rem; }
+    .article-content li { margin-bottom:0.5rem; line-height:1.7; }
+    .step-card { border-left:3px solid #16a34a; background:rgba(22,163,74,0.05); border-radius:0 12px 12px 0; padding:1rem; margin-bottom:1rem; }
+  </style>
+</head>
+<body class="min-h-screen">
+  <nav class="fixed top-0 left-0 right-0 z-50 glass-strong border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-2">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm">TF</div>
+        <span class="text-xl font-bold font-poppins gradient-text-cyan hidden sm:block">TechFix<span class="text-white">Daily</span></span>
+      </a>
+      <div class="hidden md:flex gap-6">
+        <a href="index.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium">Home</a>
+        <a href="fixes.html" class="nav-link text-cyan-400 text-sm font-medium">Tech Fixes</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="pt-20 relative">
+    <div class="relative h-72">
+      <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=1400&auto=format&fit=crop&q=80" alt="Android Battery" class="w-full h-full object-cover" />
+      <div class="absolute inset-0" style="background:linear-gradient(to bottom,transparent 20%,#0a0a1a 100%)"></div>
+      <div class="absolute bottom-0 left-0 right-0 max-w-4xl mx-auto px-4 pb-8">
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="tag bg-green-500 text-white">Android</span>
+          <span class="tag bg-green-500/20 text-green-400 border border-green-500/30">Easy</span>
+        </div>
+        <h1 class="font-poppins text-3xl sm:text-4xl font-black text-white leading-tight">Android Battery Draining Fast? Here are 7 Real Fixes</h1>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-4xl mx-auto px-4 py-10">
+    <div class="article-content">
+      <p>It's incredibly frustrating when your phone is at 100% in the morning, and by lunchtime, it's begging for a charger. Android battery drain is a very common issue, but it's rarely a hardware failure. Usually, it's a rogue app or a hidden system setting eating your power.</p>
+      
+      <h2>Fix 1: Identify the Rogue App</h2>
+      <p>Before changing system settings, we need to know who the culprit is.</p>
+      <div class="step-card">
+        <ol class="list-decimal text-slate-300">
+          <li>Go to <strong>Settings</strong> > <strong>Battery</strong> > <strong>Battery Usage</strong>.</li>
+          <li>Look at the list of apps. Is there an app you barely used today that is taking up 15-30% of your battery?</li>
+          <li>If you find one, tap on it and select <strong>Force Stop</strong>. If it's a non-essential app (like a random game), consider uninstalling it entirely.</li>
+        </ol>
+      </div>
+
+      <h2>Fix 2: Restrict Background Activity</h2>
+      <p>Apps love to run in the background, syncing data and checking for notifications. This is a massive battery drain.</p>
+      <div class="step-card">
+        <ol class="list-decimal text-slate-300">
+          <li>Go to <strong>Settings</strong> > <strong>Apps</strong> > <strong>See all apps</strong>.</li>
+          <li>Tap on heavy apps like Facebook, Instagram, or TikTok.</li>
+          <li>Tap on <strong>Battery</strong>.</li>
+          <li>Change the setting from "Optimized" to <strong>Restricted</strong>. This stops the app from running when you aren't actively looking at it.</li>
+        </ol>
+      </div>
+
+      <h2>Fix 3: Turn off Location Services for Unnecessary Apps</h2>
+      <p>GPS is one of the most power-hungry features on any phone.</p>
+      <div class="step-card">
+        <ol class="list-decimal text-slate-300">
+          <li>Go to <strong>Settings</strong> > <strong>Location</strong> > <strong>App location permissions</strong>.</li>
+          <li>Review the list of apps that have access "Allowed all the time".</li>
+          <li>Change apps that don't need constant tracking to <strong>"Allow only while using the app"</strong> or "Don't allow".</li>
+        </ol>
+      </div>
+
+      <h2>Fix 4: Enable Dark Mode (OLED Screens Only)</h2>
+      <p>If your phone has an OLED or AMOLED display (most modern Samsungs, Pixels, and premium phones do), displaying the color black actually turns off the pixel entirely, saving massive amounts of power.</p>
+      <p>Go to <strong>Settings > Display</strong> and turn on <strong>Dark Theme</strong>. Do the same inside apps like YouTube and Twitter.</p>
+
+      <h2>Fix 5: Adjust Screen Refresh Rate</h2>
+      <p>Many new phones have 120Hz screens. While butter-smooth, they drain battery 20% faster than 60Hz screens.</p>
+      <div class="step-card">
+        <ol class="list-decimal text-slate-300">
+          <li>Go to <strong>Settings</strong> > <strong>Display</strong>.</li>
+          <li>Look for "Smooth Display", "Motion Smoothness", or "Refresh Rate".</li>
+          <li>Drop it down to <strong>60Hz (Standard)</strong> if you are having a battery emergency.</li>
+        </ol>
+      </div>
+
+      <h2>Fix 6: Turn Off Wi-Fi and Bluetooth Scanning</h2>
+      <p>Even if Wi-Fi and Bluetooth are turned off, Android constantly scans for networks and devices in the background to improve location accuracy.</p>
+      <div class="step-card">
+        <ol class="list-decimal text-slate-300">
+          <li>Go to <strong>Settings</strong> > <strong>Location</strong> > <strong>Location Services</strong>.</li>
+          <li>Turn off <strong>Wi-Fi scanning</strong> and <strong>Bluetooth scanning</strong>.</li>
+        </ol>
+      </div>
+
+      <h2>Fix 7: Clear Google Play Services Cache</h2>
+      <p>Sometimes the core Google framework gets stuck in a loop trying to sync data, causing the phone to heat up and drain battery.</p>
+      <div class="step-card">
+        <ol class="list-decimal text-slate-300">
+          <li>Go to <strong>Settings</strong> > <strong>Apps</strong> > <strong>See all apps</strong>.</li>
+          <li>Find <strong>Google Play Services</strong>.</li>
+          <li>Tap <strong>Storage & cache</strong>.</li>
+          <li>Tap <strong>Clear cache</strong>. (Do not clear storage, only cache).</li>
+          <li>Restart your phone.</li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

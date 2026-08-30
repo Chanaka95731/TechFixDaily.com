@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy - TechFixDaily</title>
+  <meta name="description" content="TechFixDaily Privacy Policy — how we collect, use, and protect your personal data." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script>tailwind.config={theme:{extend:{fontFamily:{inter:['Inter','sans-serif'],poppins:['Poppins','sans-serif']}}}}</script>
+  <style>
+    body { font-family:'Inter',sans-serif; background:#0a0a1a; color:#e2e8f0; }
+    .glass { background:rgba(255,255,255,0.05); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.1); }
+    .glass-strong { background:rgba(255,255,255,0.08); backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.15); }
+    .gradient-text { background:linear-gradient(135deg,#06b6d4,#7c3aed,#ec4899); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .gradient-text-cyan { background:linear-gradient(135deg,#06b6d4,#22d3ee); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .nav-link { position:relative; }
+    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:linear-gradient(90deg,#06b6d4,#7c3aed); transition:width 0.3s; }
+    .nav-link:hover::after { width:100%; }
+    .tag { display:inline-block; padding:2px 10px; border-radius:999px; font-size:0.7rem; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; }
+    /* Policy content styles */
+    .policy-content h2 { font-family:'Poppins',sans-serif; font-size:1.35rem; font-weight:800; color:white; margin-top:2.5rem; margin-bottom:0.75rem; padding-bottom:0.5rem; border-bottom:1px solid rgba(255,255,255,0.08); }
+    .policy-content h3 { font-size:1rem; font-weight:700; color:#e2e8f0; margin-top:1.25rem; margin-bottom:0.5rem; }
+    .policy-content p { color:#94a3b8; line-height:1.85; margin-bottom:1rem; font-size:0.95rem; }
+    .policy-content ul { padding-left:1.5rem; color:#94a3b8; margin-bottom:1rem; }
+    .policy-content li { margin-bottom:0.5rem; line-height:1.75; font-size:0.95rem; }
+    .policy-content a { color:#06b6d4; text-decoration:underline; }
+    .policy-content strong { color:#e2e8f0; }
+    .toc-link { display:block; padding:6px 12px; border-radius:8px; color:#94a3b8; font-size:0.825rem; transition:all 0.2s; }
+    .toc-link:hover { background:rgba(6,182,212,0.1); color:#06b6d4; }
+    .highlight-box { background:rgba(6,182,212,0.07); border-left:3px solid #06b6d4; border-radius:0 12px 12px 0; padding:1rem 1.25rem; margin-bottom:1rem; }
+    .highlight-box p { margin:0; }
+  </style>
+</head>
+<body class="min-h-screen">
+
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 left-0 right-0 z-50 glass-strong border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-2 group">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm shadow-lg group-hover:scale-110 transition-transform">TF</div>
+          <span class="text-xl font-bold font-poppins gradient-text-cyan hidden sm:block">TechFix<span class="text-white">Daily</span></span>
+        </a>
+        <div class="hidden md:flex items-center gap-6">
+          <a href="index.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium transition-colors">Home</a>
+          <a href="fixes.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium transition-colors">Tech Fixes</a>
+          <a href="tips.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium transition-colors">Tips & Tricks</a>
+          <a href="categories.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium transition-colors">Categories</a>
+          <a href="about.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium transition-colors">About</a>
+          <a href="contact.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium transition-colors">Contact</a>
+        </div>
+        <button class="md:hidden glass p-2 rounded-lg" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+          <i data-lucide="menu" class="w-5 h-5 text-slate-300"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden glass border-t border-white/10 px-4 pb-4 pt-2">
+      <div class="flex flex-col gap-3">
+        <a href="index.html" class="text-slate-300 py-2">🏠 Home</a>
+        <a href="fixes.html" class="text-slate-300 py-2">🔧 Tech Fixes</a>
+        <a href="tips.html" class="text-slate-300 py-2">💡 Tips & Tricks</a>
+        <a href="categories.html" class="text-slate-300 py-2">📁 Categories</a>
+        <a href="about.html" class="text-slate-300 py-2">ℹ️ About</a>
+        <a href="contact.html" class="text-slate-300 py-2">✉️ Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pt-24 pb-12 relative overflow-hidden" style="background:radial-gradient(ellipse at 30% 50%,rgba(6,182,212,0.08) 0%,transparent 60%),#0a0a1a;">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="flex items-center gap-2 text-slate-500 text-sm mb-6">
+        <a href="index.html" class="hover:text-cyan-400 transition-colors">Home</a>
+        <i data-lucide="chevron-right" class="w-4 h-4"></i>
+        <span class="text-cyan-400">Privacy Policy</span>
+      </div>
+      <div class="tag bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 mb-4">🔒 Legal</div>
+      <h1 class="font-poppins text-4xl sm:text-5xl font-black text-white mb-4">Privacy <span class="gradient-text-cyan">Policy</span></h1>
+      <p class="text-slate-400 text-lg max-w-2xl">Your privacy matters to us. This policy explains what data we collect, how we use it, and how we keep it safe.</p>
+      <div class="flex flex-wrap items-center gap-4 mt-5">
+        <span class="flex items-center gap-2 text-slate-500 text-sm"><i data-lucide="calendar" class="w-4 h-4"></i> Last updated: August 27, 2025</span>
+        <span class="flex items-center gap-2 text-slate-500 text-sm"><i data-lucide="clock" class="w-4 h-4"></i> ~8 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex gap-12">
+
+    <!-- Main Content -->
+    <main class="flex-1 min-w-0">
+
+      <!-- Quick summary box -->
+      <div class="glass-strong rounded-2xl p-6 border border-cyan-500/20 mb-10">
+        <h2 class="text-white font-bold text-lg mb-3 flex items-center gap-2">
+          <span class="text-2xl">⚡</span> TL;DR — The Short Version
+        </h2>
+        <ul class="space-y-2 text-slate-300 text-sm">
+          <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> We collect minimal data needed to run this site (analytics, newsletter emails if you subscribe).</li>
+          <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> We use Google Analytics and Google AdSense, which may use cookies.</li>
+          <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> We never sell your personal data to third parties.</li>
+          <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> You can opt out of email newsletters anytime — one click, no questions asked.</li>
+          <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> You have full rights under GDPR and CCPA to access, correct, or delete your data.</li>
+        </ul>
+      </div>
+
+      <div class="policy-content">
+
+        <h2 id="introduction">1. Introduction</h2>
+        <p>Welcome to <strong>TechFixDaily</strong> ("we," "our," or "us"). We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website at <strong>TechFixDaily.com</strong> and any related pages, features, or services (collectively, the "Site").</p>
+        <p>Please read this policy carefully. If you disagree with its terms, please discontinue use of our Site. If you have any questions, contact us at <a href="mailto:privacy@techfixdaily.com">privacy@techfixdaily.com</a>.</p>
+
+        <h2 id="information-we-collect">2. Information We Collect</h2>
+        <p>We collect information in two ways — information you voluntarily provide and information automatically collected when you visit our Site.</p>
+
+        <h3>2.1 Information You Provide Voluntarily</h3>
+        <ul>
+          <li><strong>Newsletter Subscription:</strong> When you subscribe to our newsletter, we collect your email address. This is used solely to send you our daily tech fixes digest.</li>
+          <li><strong>Contact Form:</strong> When you contact us, we collect your name, email address, and the contents of your message to respond to your inquiry.</li>
+          <li><strong>Comments/Ratings:</strong> If you rate or interact with articles, we may store your rating responses (no personal data is attached).</li>
+        </ul>
+
+        <h3>2.2 Information Automatically Collected</h3>
+        <p>When you visit the Site, certain information is collected automatically, including:</p>
+        <ul>
+          <li><strong>Log Data:</strong> Your IP address, browser type and version, operating system, the pages you visit, time spent on pages, and referring URLs.</li>
+          <li><strong>Cookies:</strong> Small data files placed on your device. See Section 5 (Cookies) for details.</li>
+          <li><strong>Device Information:</strong> Device type, screen resolution, and hardware model (collected in anonymized form).</li>
+          <li><strong>Usage Data:</strong> How you interact with our Site — scroll depth, clicks, and time on page — collected through Google Analytics.</li>
+        </ul>
+
+        <h2 id="how-we-use">3. How We Use Your Information</h2>
+        <p>We use the information we collect for the following purposes:</p>
+        <ul>
+          <li>To <strong>provide and maintain</strong> our website and its content.</li>
+          <li>To <strong>send newsletters</strong> to subscribers who have opted in — you can unsubscribe at any time.</li>
+          <li>To <strong>respond to inquiries</strong> submitted through our contact form.</li>
+          <li>To <strong>analyze usage patterns</strong> and improve the quality, relevance, and performance of our content using Google Analytics.</li>
+          <li>To <strong>display relevant advertisements</strong> through Google AdSense, which may use cookies and your browsing behavior to show personalized ads.</li>
+          <li>To <strong>detect and prevent</strong> technical errors, security threats, and abuse of our Site.</li>
+          <li>To <strong>comply with legal obligations</strong> when required by applicable law.</li>
+        </ul>
+
+        <div class="highlight-box">
+          <p class="text-slate-300 text-sm">📌 <strong>Important:</strong> We do <em>not</em> sell, trade, rent, or otherwise transfer your personal data to third parties for their own marketing purposes. Period.</p>
+        </div>
+
+        <h2 id="third-party">4. Third-Party Services</h2>
+        <p>We use trusted third-party services that may collect and process your data under their own privacy policies:</p>
+
+        <h3>4.1 Google Analytics</h3>
+        <p>We use Google Analytics to understand how visitors interact with our Site. Google Analytics collects anonymized usage data via cookies. You can opt out using the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a>.</p>
+
+        <h3>4.2 Google AdSense</h3>
+        <p>We display advertisements served by Google AdSense. Google uses cookies (including the DoubleClick cookie) to serve ads based on your prior visits to our Site and other websites on the internet. You can opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">Google Ads Settings</a>.</p>
+
+        <h3>4.3 Email Newsletter Service</h3>
+        <p>Newsletter delivery is handled by a third-party email service provider. Your email address is stored on their servers and is subject to their privacy policy. We will only use your email to send tech-related content you've subscribed to.</p>
+
+        <h3>4.4 Content Delivery (Unsplash, Google Fonts, CDN Libraries)</h3>
+        <p>We use Unsplash for images, Google Fonts for typography, and CDN services for JavaScript libraries. These services may log your IP address as part of standard server request logging.</p>
+
+        <h2 id="cookies">5. Cookies</h2>
+        <p>Cookies are small text files stored on your device when you visit a website. We use the following types of cookies:</p>
+        <ul>
+          <li><strong>Essential Cookies:</strong> Necessary for the Site to function correctly. These cannot be disabled.</li>
+          <li><strong>Analytics Cookies (Google Analytics):</strong> Help us understand Site usage in aggregate, anonymized form.</li>
+          <li><strong>Advertising Cookies (Google AdSense):</strong> Used to serve relevant ads. You can opt out via <a href="http://www.aboutads.info/choices/" target="_blank" rel="noopener">aboutads.info</a>.</li>
+          <li><strong>Preference Cookies:</strong> Remember your settings and preferences (e.g., display preferences).</li>
+        </ul>
+        <p>Most browsers allow you to control or disable cookies via their settings. Please note that disabling cookies may affect the functionality of certain parts of our Site.</p>
+
+        <h2 id="data-retention">6. Data Retention</h2>
+        <ul>
+          <li><strong>Newsletter emails:</strong> Retained until you unsubscribe. Deleted within 30 days of unsubscribe request.</li>
+          <li><strong>Contact form data:</strong> Retained for up to 12 months, then permanently deleted.</li>
+          <li><strong>Analytics data:</strong> Retained by Google Analytics for 26 months by default (anonymized).</li>
+          <li><strong>Server logs:</strong> Retained for up to 90 days for security and debugging purposes.</li>
+        </ul>
+
+        <h2 id="your-rights">7. Your Rights</h2>
+        <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+        <ul>
+          <li><strong>Right of Access:</strong> Request a copy of the personal data we hold about you.</li>
+          <li><strong>Right to Rectification:</strong> Request correction of inaccurate or incomplete data.</li>
+          <li><strong>Right to Erasure ("Right to be Forgotten"):</strong> Request deletion of your personal data.</li>
+          <li><strong>Right to Restrict Processing:</strong> Request that we limit how we use your data.</li>
+          <li><strong>Right to Data Portability:</strong> Request your data in a structured, machine-readable format.</li>
+          <li><strong>Right to Object:</strong> Object to processing of your data, including for direct marketing.</li>
+          <li><strong>Right to Withdraw Consent:</strong> Withdraw consent at any time where processing is based on consent.</li>
+        </ul>
+        <p>To exercise any of these rights, please contact us at <a href="mailto:privacy@techfixdaily.com">privacy@techfixdaily.com</a>. We will respond within 30 days.</p>
+
+        <h2 id="children">8. Children's Privacy</h2>
+        <p>TechFixDaily is not directed to children under the age of 13. We do not knowingly collect personal data from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately and we will delete that information.</p>
+
+        <h2 id="security">9. Data Security</h2>
+        <p>We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. These measures include:</p>
+        <ul>
+          <li>HTTPS encryption for all data in transit (SSL/TLS).</li>
+          <li>Restricted access to personal data — only authorized team members can access it.</li>
+          <li>Regular security reviews and updates to our practices.</li>
+        </ul>
+        <p>However, no method of electronic transmission or storage is 100% secure. While we strive to protect your data, we cannot guarantee absolute security.</p>
+
+        <h2 id="international">10. International Data Transfers</h2>
+        <p>TechFixDaily operates globally. If you are located outside the country where our servers are based, your data may be transferred to and processed in other countries. We ensure appropriate safeguards are in place for such transfers in accordance with applicable data protection laws.</p>
+
+        <h2 id="links">11. Links to Third-Party Websites</h2>
+        <p>Our Site may contain links to third-party websites (for example, links to download drivers, official software, or tools mentioned in our guides). We are not responsible for the privacy practices of those sites. We encourage you to review the privacy policies of every website you visit.</p>
+
+        <h2 id="changes">12. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. We will notify you of any significant changes by updating the "Last updated" date at the top of this page. We encourage you to review this policy periodically. Your continued use of the Site after changes are posted constitutes your acceptance of the updated policy.</p>
+
+        <h2 id="contact">13. Contact Us</h2>
+        <p>If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your data, please contact us:</p>
+        <div class="glass rounded-xl p-5 border border-white/10 not-prose mt-4">
+          <div class="space-y-3 text-sm text-slate-300">
+            <div class="flex items-center gap-3"><i data-lucide="mail" class="w-4 h-4 text-cyan-400"></i> <strong>Email:</strong> <a href="mailto:privacy@techfixdaily.com" class="text-cyan-400 hover:underline">privacy@techfixdaily.com</a></div>
+            <div class="flex items-center gap-3"><i data-lucide="globe" class="w-4 h-4 text-cyan-400"></i> <strong>Website:</strong> <span>TechFixDaily.com</span></div>
+            <div class="flex items-center gap-3"><i data-lucide="clock" class="w-4 h-4 text-cyan-400"></i> <strong>Response time:</strong> Within 3 business days</div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Sidebar: TOC -->
+    <aside class="hidden lg:block w-56 flex-shrink-0">
+      <div class="glass rounded-2xl p-5 border border-white/10 sticky top-24">
+        <h3 class="text-white font-bold text-sm uppercase tracking-wider mb-4">📋 Contents</h3>
+        <nav class="space-y-1">
+          <a href="#introduction" class="toc-link">1. Introduction</a>
+          <a href="#information-we-collect" class="toc-link">2. Data We Collect</a>
+          <a href="#how-we-use" class="toc-link">3. How We Use It</a>
+          <a href="#third-party" class="toc-link">4. Third-Party Services</a>
+          <a href="#cookies" class="toc-link">5. Cookies</a>
+          <a href="#data-retention" class="toc-link">6. Data Retention</a>
+          <a href="#your-rights" class="toc-link">7. Your Rights</a>
+          <a href="#children" class="toc-link">8. Children's Privacy</a>
+          <a href="#security" class="toc-link">9. Data Security</a>
+          <a href="#international" class="toc-link">10. International Transfers</a>
+          <a href="#links" class="toc-link">11. Third-Party Links</a>
+          <a href="#changes" class="toc-link">12. Policy Changes</a>
+          <a href="#contact" class="toc-link">13. Contact Us</a>
+        </nav>
+        <div class="mt-6 pt-4 border-t border-white/10">
+          <a href="terms.html" class="toc-link flex items-center gap-2">
+            <i data-lucide="file-text" class="w-3 h-3"></i> Terms of Service
+          </a>
+          <a href="contact.html" class="toc-link flex items-center gap-2 mt-1">
+            <i data-lucide="mail" class="w-3 h-3"></i> Contact Us
+          </a>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-[#0a0a1a] border-t border-white/5 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+        <div class="col-span-2 lg:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center text-white font-bold">TF</div>
+            <span class="text-xl font-bold font-poppins text-white">TechFix<span class="gradient-text-cyan">Daily</span></span>
+          </div>
+          <p class="text-slate-400 text-sm leading-relaxed">Your go-to source for daily tech solutions, fixes, and pro tips.</p>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-slate-400 text-sm">
+            <li><a href="index.html" class="hover:text-cyan-400 transition-colors">Home</a></li>
+            <li><a href="fixes.html" class="hover:text-cyan-400 transition-colors">Tech Fixes</a></li>
+            <li><a href="tips.html" class="hover:text-cyan-400 transition-colors">Tips & Tricks</a></li>
+            <li><a href="categories.html" class="hover:text-cyan-400 transition-colors">Categories</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-4">Company</h4>
+          <ul class="space-y-2 text-slate-400 text-sm">
+            <li><a href="about.html" class="hover:text-cyan-400 transition-colors">About Us</a></li>
+            <li><a href="contact.html" class="hover:text-cyan-400 transition-colors">Contact</a></li>
+            <li><a href="privacy.html" class="text-cyan-400">Privacy Policy</a></li>
+            <li><a href="terms.html" class="hover:text-cyan-400 transition-colors">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-4">Legal</h4>
+          <ul class="space-y-2 text-slate-400 text-sm">
+            <li><a href="privacy.html" class="text-cyan-400">Privacy Policy</a></li>
+            <li><a href="terms.html" class="hover:text-cyan-400 transition-colors">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-slate-500 text-sm">© 2025 TechFixDaily. All rights reserved.</p>
+        <div class="flex gap-6 text-slate-500 text-sm">
+          <a href="privacy.html" class="text-cyan-400">Privacy Policy</a>
+          <a href="terms.html" class="hover:text-cyan-400 transition-colors">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="fixed bottom-6 right-6 w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white shadow-lg opacity-0 transition-all duration-300 z-50" style="box-shadow:0 0 20px rgba(6,182,212,0.4)">
+    <i data-lucide="arrow-up" class="w-5 h-5"></i>
+  </button>
+
+  <script>
+    lucide.createIcons();
+    window.addEventListener('scroll',()=>{
+      document.getElementById('backToTop').style.opacity = window.scrollY > 300 ? '1' : '0';
+    });
+  </script>
+</body>
+</html>

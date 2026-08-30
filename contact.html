@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - TechFixDaily</title>
+  <meta name="description" content="Get in touch with TechFixDaily team for support, partnerships, or tech inquiries." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script>tailwind.config={theme:{extend:{fontFamily:{inter:['Inter','sans-serif'],poppins:['Poppins','sans-serif']}}}}</script>
+  <style>
+    body { font-family:'Inter',sans-serif; background:#0a0a1a; color:#e2e8f0; }
+    .glass { background:rgba(255,255,255,0.05); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.1); }
+    .glass-strong { background:rgba(255,255,255,0.08); backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.15); }
+    .gradient-text { background:linear-gradient(135deg,#06b6d4,#7c3aed,#ec4899); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .gradient-text-cyan { background:linear-gradient(135deg,#06b6d4,#22d3ee); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .nav-link { position:relative; }
+    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:linear-gradient(90deg,#06b6d4,#7c3aed); transition:width 0.3s; }
+    .nav-link:hover::after { width:100%; }
+    .glow-btn { box-shadow:0 0 20px rgba(6,182,212,0.4); transition:all 0.3s; }
+    .glow-btn:hover { box-shadow:0 0 40px rgba(6,182,212,0.7); }
+    .form-input { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); color:white; border-radius:0.75rem; padding:0.75rem 1rem; width:100%; outline:none; transition:all 0.3s; }
+    .form-input:focus { border-color:#06b6d4; background:rgba(255,255,255,0.05); box-shadow:0 0 0 4px rgba(6,182,212,0.1); }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 left-0 right-0 z-50 glass-strong border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-2">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm">TF</div>
+          <span class="text-xl font-bold font-poppins gradient-text-cyan hidden sm:block">TechFix<span class="text-white">Daily</span></span>
+        </a>
+        <div class="hidden md:flex items-center gap-6">
+          <a href="index.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium">Home</a>
+          <a href="fixes.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium">Tech Fixes</a>
+          <a href="tips.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium">Tips & Tricks</a>
+          <a href="categories.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium">Categories</a>
+          <a href="about.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium">About</a>
+          <a href="contact.html" class="nav-link text-cyan-400 text-sm font-medium">Contact</a>
+        </div>
+        <button class="md:hidden glass p-2 rounded-lg" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+          <i data-lucide="menu" class="w-5 h-5 text-slate-300"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden glass border-t border-white/10 px-4 pb-4 pt-2">
+      <div class="flex flex-col gap-3">
+        <a href="index.html" class="text-slate-300 py-2">🏠 Home</a>
+        <a href="fixes.html" class="text-slate-300 py-2">🔧 Tech Fixes</a>
+        <a href="tips.html" class="text-slate-300 py-2">💡 Tips & Tricks</a>
+        <a href="about.html" class="text-slate-300 py-2">ℹ️ About</a>
+        <a href="contact.html" class="text-cyan-400 py-2">✉️ Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTENT -->
+  <main class="flex-grow pt-24 pb-20 relative overflow-hidden flex items-center">
+    <div class="absolute top-1/2 left-0 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl -translate-y-1/2"></div>
+    <div class="absolute top-1/2 right-0 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl -translate-y-1/2"></div>
+    
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+      <div class="text-center mb-12">
+        <span class="inline-block py-1 px-3 rounded-full bg-cyan-500/20 text-cyan-400 text-xs font-bold tracking-wider mb-4 border border-cyan-500/30">GET IN TOUCH</span>
+        <h1 class="font-poppins text-4xl sm:text-5xl font-black text-white mb-4">Contact <span class="gradient-text">Our Team</span></h1>
+        <p class="text-slate-400 text-lg max-w-2xl mx-auto">Have a tech problem we haven't covered? Want to partner with us? Drop us a message below.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-5 gap-10">
+        <!-- Contact Info -->
+        <div class="lg:col-span-2 space-y-6">
+          <div class="glass rounded-2xl p-6 border border-white/10">
+            <div class="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center text-cyan-400 mb-4 border border-cyan-500/30">
+              <i data-lucide="mail" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-white font-bold text-lg mb-1">Email Us</h3>
+            <p class="text-slate-400 text-sm mb-3">We usually respond within 24 hours.</p>
+            <a href="mailto:hello@techfixdaily.com" class="text-cyan-400 font-medium hover:underline">hello@techfixdaily.com</a>
+          </div>
+          
+          <div class="glass rounded-2xl p-6 border border-white/10">
+            <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center text-purple-400 mb-4 border border-purple-500/30">
+              <i data-lucide="map-pin" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-white font-bold text-lg mb-1">Location</h3>
+            <p class="text-slate-400 text-sm">TechFixDaily HQ<br>Silicon Valley, CA 94025<br>United States</p>
+          </div>
+
+          <div class="glass rounded-2xl p-6 border border-white/10">
+            <h3 class="text-white font-bold text-lg mb-3">Follow Us</h3>
+            <div class="flex gap-3">
+              <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-300 hover:bg-cyan-500/20 hover:text-cyan-400 transition-colors border border-white/10"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+              <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-300 hover:bg-blue-500/20 hover:text-blue-400 transition-colors border border-white/10"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+              <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-300 hover:bg-pink-500/20 hover:text-pink-400 transition-colors border border-white/10"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="lg:col-span-3">
+          <div class="glass-strong rounded-3xl p-8 border border-white/10">
+            <h2 class="text-2xl font-bold text-white mb-6">Send a Message</h2>
+            <form id="contactForm" onsubmit="submitForm(event)" class="space-y-5">
+              <div class="grid sm:grid-cols-2 gap-5">
+                <div>
+                  <label class="block text-slate-400 text-sm font-medium mb-2">First Name</label>
+                  <input type="text" required class="form-input" placeholder="John" />
+                </div>
+                <div>
+                  <label class="block text-slate-400 text-sm font-medium mb-2">Last Name</label>
+                  <input type="text" required class="form-input" placeholder="Doe" />
+                </div>
+              </div>
+              <div>
+                <label class="block text-slate-400 text-sm font-medium mb-2">Email Address</label>
+                <input type="email" required class="form-input" placeholder="john@example.com" />
+              </div>
+              <div>
+                <label class="block text-slate-400 text-sm font-medium mb-2">Subject</label>
+                <select class="form-input appearance-none">
+                  <option value="support">Technical Support</option>
+                  <option value="feedback">Feedback / Suggestion</option>
+                  <option value="partnership">Partnership Inquiry</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-slate-400 text-sm font-medium mb-2">Message</label>
+                <textarea required rows="5" class="form-input resize-none" placeholder="How can we help you?"></textarea>
+              </div>
+              <button type="submit" class="w-full glow-btn bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold py-3.5 rounded-xl transition-all flex justify-center items-center gap-2">
+                Send Message <i data-lucide="send" class="w-4 h-4"></i>
+              </button>
+            </form>
+            
+            <!-- Success Message -->
+            <div id="successMsg" class="hidden mt-6 p-4 rounded-xl bg-green-500/20 border border-green-500/30 text-green-400 flex items-center gap-3">
+              <i data-lucide="check-circle" class="w-5 h-5"></i>
+              <div>
+                <p class="font-bold">Message sent successfully!</p>
+                <p class="text-sm opacity-90">We'll get back to you soon.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#0a0a1a] border-t border-white/5 py-8">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <a href="index.html" class="text-xl font-bold font-poppins text-white">TechFix<span class="gradient-text-cyan">Daily</span></a>
+      <div class="mt-4 flex justify-center gap-6 text-sm text-slate-500">
+        <a href="privacy.html" class="hover:text-cyan-400">Privacy Policy</a>
+        <a href="terms.html" class="hover:text-cyan-400">Terms of Service</a>
+      </div>
+      <p class="text-slate-600 text-xs mt-4">© 2025 TechFixDaily. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    function submitForm(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      const originalText = btn.innerHTML;
+      btn.innerHTML = 'Sending...';
+      btn.disabled = true;
+      
+      setTimeout(() => {
+        e.target.reset();
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+        document.getElementById('successMsg').classList.remove('hidden');
+        setTimeout(() => {
+          document.getElementById('successMsg').classList.add('hidden');
+        }, 5000);
+      }, 1500);
+    }
+  </script>
+</body>
+</html>

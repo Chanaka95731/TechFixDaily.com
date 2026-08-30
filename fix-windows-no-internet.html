@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fix "No Internet, Secured" on Windows - TechFixDaily</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script>tailwind.config={theme:{extend:{fontFamily:{inter:['Inter','sans-serif'],poppins:['Poppins','sans-serif']}}}}</script>
+  <style>
+    body { font-family:'Inter',sans-serif; background:#0a0a1a; color:#e2e8f0; }
+    .glass-strong { background:rgba(255,255,255,0.08); backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.15); }
+    .gradient-text-cyan { background:linear-gradient(135deg,#06b6d4,#22d3ee); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .nav-link { position:relative; }
+    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:linear-gradient(90deg,#06b6d4,#7c3aed); transition:width 0.3s; }
+    .nav-link:hover::after { width:100%; }
+    .tag { display:inline-block; padding:2px 10px; border-radius:999px; font-size:0.7rem; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; }
+    .article-content h2 { font-family:'Poppins',sans-serif; font-size:1.5rem; font-weight:800; color:white; margin-top:2.5rem; margin-bottom:1rem; }
+    .article-content p { color:#94a3b8; line-height:1.8; margin-bottom:1rem; }
+    .article-content ul, .article-content ol { padding-left:1.5rem; color:#94a3b8; margin-bottom:1rem; }
+    .article-content li { margin-bottom:0.5rem; line-height:1.7; }
+    .article-content code { background:rgba(6,182,212,0.1); color:#22d3ee; padding:2px 6px; border-radius:4px; font-family:monospace; font-size:0.85em; }
+    .step-card { border-left:3px solid #06b6d4; background:rgba(6,182,212,0.05); border-radius:0 12px 12px 0; padding:1rem; margin-bottom:1rem; }
+  </style>
+</head>
+<body class="min-h-screen">
+  <nav class="fixed top-0 left-0 right-0 z-50 glass-strong border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-2">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm">TF</div>
+        <span class="text-xl font-bold font-poppins gradient-text-cyan hidden sm:block">TechFix<span class="text-white">Daily</span></span>
+      </a>
+      <div class="hidden md:flex gap-6">
+        <a href="index.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium">Home</a>
+        <a href="fixes.html" class="nav-link text-cyan-400 text-sm font-medium">Tech Fixes</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="pt-20 relative">
+    <div class="relative h-72">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&auto=format&fit=crop&q=80" alt="No Internet" class="w-full h-full object-cover" />
+      <div class="absolute inset-0" style="background:linear-gradient(to bottom,transparent 20%,#0a0a1a 100%)"></div>
+      <div class="absolute bottom-0 left-0 right-0 max-w-4xl mx-auto px-4 pb-8">
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="tag bg-cyan-500 text-white">Windows</span>
+          <span class="tag bg-yellow-500/20 text-yellow-400 border border-yellow-500/30">Medium</span>
+        </div>
+        <h1 class="font-poppins text-3xl sm:text-4xl font-black text-white leading-tight">Fix "No Internet, Secured" Error on Windows</h1>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-4xl mx-auto px-4 py-10">
+    <div class="article-content">
+      <p>Seeing "No Internet, Secured" under your WiFi name means your PC has successfully connected to the router, but the router cannot reach the outside internet (or Windows thinks it can't). Here's how to fix it.</p>
+      
+      <h2>Fix 1: The Windows Network Troubleshooter</h2>
+      <p>Windows has actually gotten quite good at fixing this specific issue automatically by resetting the adapter.</p>
+      <div class="step-card">
+        <ol class="list-decimal text-slate-300">
+          <li>Right-click the WiFi or Ethernet icon in your taskbar.</li>
+          <li>Select <strong>Diagnose network problems</strong> (or Troubleshoot problems).</li>
+          <li>Let Windows run its scan. It will often silently reset your IP configuration and fix the issue.</li>
+        </ol>
+      </div>
+
+      <h2>Fix 2: Flush DNS and Reset Winsock (Command Prompt)</h2>
+      <p>This is the "magic bullet" for 90% of Windows internet issues. It completely wipes all cached network configurations.</p>
+      <div class="step-card">
+        <ol class="list-decimal text-slate-300">
+          <li>Press <code>Windows Key</code>, type <strong>cmd</strong>, right-click Command Prompt, and select <strong>Run as administrator</strong>.</li>
+          <li>Type the following commands, pressing Enter after each one:</li>
+          <li><code>netsh winsock reset</code></li>
+          <li><code>netsh int ip reset</code></li>
+          <li><code>ipconfig /release</code></li>
+          <li><code>ipconfig /renew</code></li>
+          <li><code>ipconfig /flushdns</code></li>
+          <li>Restart your PC.</li>
+        </ol>
+      </div>
+
+      <h2>Fix 3: Disable IPv6</h2>
+      <p>Sometimes, your router and Windows get confused trying to route traffic through IPv6 instead of the standard IPv4.</p>
+      <div class="step-card">
+        <ol class="list-decimal text-slate-300">
+          <li>Press <code>Win + R</code>, type <code>ncpa.cpl</code>, and hit Enter.</li>
+          <li>Right-click your active Wi-Fi or Ethernet connection and select <strong>Properties</strong>.</li>
+          <li>Scroll down the list and <strong>uncheck</strong> the box next to <strong>Internet Protocol Version 6 (TCP/IPv6)</strong>.</li>
+          <li>Click OK and disconnect/reconnect to your WiFi.</li>
+        </ol>
+      </div>
+
+      <h2>Fix 4: Network Reset</h2>
+      <p>If all else fails, a total network reset will reinstall all network adapters and set all networking components back to factory defaults.</p>
+      <div class="step-card">
+        <ol class="list-decimal text-slate-300">
+          <li>Open <strong>Settings > Network & internet > Advanced network settings</strong>.</li>
+          <li>Click on <strong>Network reset</strong>.</li>
+          <li>Click <strong>Reset now</strong> and confirm. Your PC will automatically restart after 5 minutes.</li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

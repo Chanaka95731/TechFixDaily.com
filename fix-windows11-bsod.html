@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fix Windows 11 BSOD After Update - TechFixDaily</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script>tailwind.config={theme:{extend:{fontFamily:{inter:['Inter','sans-serif'],poppins:['Poppins','sans-serif']}}}}</script>
+  <style>
+    body { font-family:'Inter',sans-serif; background:#0a0a1a; color:#e2e8f0; }
+    .glass-strong { background:rgba(255,255,255,0.08); backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.15); }
+    .gradient-text-cyan { background:linear-gradient(135deg,#06b6d4,#22d3ee); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .nav-link { position:relative; }
+    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:linear-gradient(90deg,#06b6d4,#7c3aed); transition:width 0.3s; }
+    .nav-link:hover::after { width:100%; }
+    .tag { display:inline-block; padding:2px 10px; border-radius:999px; font-size:0.7rem; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; }
+    .article-content h2 { font-family:'Poppins',sans-serif; font-size:1.5rem; font-weight:800; color:white; margin-top:2.5rem; margin-bottom:1rem; }
+    .article-content p { color:#94a3b8; line-height:1.8; margin-bottom:1rem; }
+    .article-content ul, .article-content ol { padding-left:1.5rem; color:#94a3b8; margin-bottom:1rem; }
+    .article-content li { margin-bottom:0.5rem; line-height:1.7; }
+    .article-content code { background:rgba(6,182,212,0.1); color:#22d3ee; padding:2px 6px; border-radius:4px; font-family:monospace; font-size:0.85em; }
+    .step-card { border-left:3px solid #ef4444; background:rgba(239,68,68,0.05); border-radius:0 12px 12px 0; padding:1rem; margin-bottom:1rem; }
+  </style>
+</head>
+<body class="min-h-screen">
+  <nav class="fixed top-0 left-0 right-0 z-50 glass-strong border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-2">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm">TF</div>
+        <span class="text-xl font-bold font-poppins gradient-text-cyan hidden sm:block">TechFix<span class="text-white">Daily</span></span>
+      </a>
+      <div class="hidden md:flex gap-6">
+        <a href="index.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium">Home</a>
+        <a href="fixes.html" class="nav-link text-cyan-400 text-sm font-medium">Tech Fixes</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="pt-20 relative">
+    <div class="relative h-72">
+      <img src="https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=1400&auto=format&fit=crop&q=80" alt="Windows BSOD" class="w-full h-full object-cover" />
+      <div class="absolute inset-0" style="background:linear-gradient(to bottom,transparent 20%,#0a0a1a 100%)"></div>
+      <div class="absolute bottom-0 left-0 right-0 max-w-4xl mx-auto px-4 pb-8">
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="tag bg-cyan-500 text-white">Windows</span>
+          <span class="tag bg-red-500/20 text-red-400 border border-red-500/30">Hard</span>
+        </div>
+        <h1 class="font-poppins text-3xl sm:text-4xl font-black text-white leading-tight">Fix Windows 11 Blue Screen of Death (BSOD) After Update</h1>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-4xl mx-auto px-4 py-10">
+    <div class="article-content">
+      <p>A Blue Screen of Death (BSOD) after a Windows Update is usually caused by a driver conflict, a corrupted update file, or an incompatible piece of software (like a third-party antivirus). Here is the step-by-step process to recover your PC.</p>
+      
+      <h2>Step 1: Boot into Safe Mode</h2>
+      <p>If your PC crashes immediately on boot, you need to get into Safe Mode to fix it.</p>
+      <div class="step-card">
+        <ol class="list-decimal text-slate-300">
+          <li>Turn on your PC. As soon as the Windows logo appears, press and hold the Power button to force shut it down.</li>
+          <li>Repeat this <strong>3 times</strong>. On the third boot, Windows will enter the <strong>Automatic Repair</strong> environment.</li>
+          <li>Click <strong>Advanced options > Troubleshoot > Advanced options > Startup Settings > Restart</strong>.</li>
+          <li>When it restarts, press <strong>4</strong> or <strong>F4</strong> to boot into Safe Mode.</li>
+        </ol>
+      </div>
+
+      <h2>Step 2: Uninstall the Problematic Update</h2>
+      <p>If the BSOD started right after an update, removing that update is the fastest fix.</p>
+      <div class="step-card">
+        <ol class="list-decimal text-slate-300">
+          <li>Once in Safe Mode, open <strong>Settings > Windows Update > Update history</strong>.</li>
+          <li>Scroll down and click <strong>Uninstall updates</strong>.</li>
+          <li>Look for the most recent "Quality Update" or "Feature Update" based on the date.</li>
+          <li>Click <strong>Uninstall</strong> and restart your PC normally.</li>
+        </ol>
+      </div>
+
+      <h2>Step 3: Run System File Checker (SFC) & DISM</h2>
+      <p>Corrupted system files from a bad update process can cause the kernel to panic.</p>
+      <div class="step-card">
+        <ol class="list-decimal text-slate-300">
+          <li>Press <code>Windows Key</code>, type <strong>cmd</strong>, right-click Command Prompt, and select <strong>Run as administrator</strong>.</li>
+          <li>Type <code>sfc /scannow</code> and press Enter. Let it reach 100%.</li>
+          <li>Next, type <code>DISM /Online /Cleanup-Image /RestoreHealth</code> and press Enter.</li>
+          <li>Restart your PC.</li>
+        </ol>
+      </div>
+
+      <h2>Step 4: Roll Back GPU Drivers</h2>
+      <p>Display drivers are the #1 cause of BSODs (specifically error codes like VIDEO_TDR_FAILURE or SYSTEM_THREAD_EXCEPTION_NOT_HANDLED).</p>
+      <div class="step-card">
+        <ol class="list-decimal text-slate-300">
+          <li>Right-click the Start button and select <strong>Device Manager</strong>.</li>
+          <li>Expand <strong>Display adapters</strong>.</li>
+          <li>Right-click your graphics card (NVIDIA/AMD/Intel) and select <strong>Properties</strong>.</li>
+          <li>Go to the <strong>Driver</strong> tab and click <strong>Roll Back Driver</strong>.</li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

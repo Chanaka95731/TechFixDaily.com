@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Remove Virus Without Antivirus - Step by Step - TechFixDaily</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script>tailwind.config={theme:{extend:{fontFamily:{inter:['Inter','sans-serif'],poppins:['Poppins','sans-serif']}}}}</script>
+  <style>
+    body { font-family:'Inter',sans-serif; background:#0a0a1a; color:#e2e8f0; }
+    .glass-strong { background:rgba(255,255,255,0.08); backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.15); }
+    .gradient-text-cyan { background:linear-gradient(135deg,#06b6d4,#22d3ee); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .nav-link { position:relative; }
+    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:linear-gradient(90deg,#06b6d4,#7c3aed); transition:width 0.3s; }
+    .nav-link:hover::after { width:100%; }
+    .tag { display:inline-block; padding:2px 10px; border-radius:999px; font-size:0.7rem; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; }
+    .article-content h2 { font-family:'Poppins',sans-serif; font-size:1.5rem; font-weight:800; color:white; margin-top:2.5rem; margin-bottom:1rem; }
+    .article-content p { color:#94a3b8; line-height:1.8; margin-bottom:1rem; }
+    .article-content ul, .article-content ol { padding-left:1.5rem; color:#94a3b8; margin-bottom:1rem; }
+    .article-content li { margin-bottom:0.5rem; line-height:1.7; }
+    .step-card { border-left:3px solid #ef4444; background:rgba(239,68,68,0.05); border-radius:0 12px 12px 0; padding:1rem; margin-bottom:1rem; }
+  </style>
+</head>
+<body class="min-h-screen">
+  <nav class="fixed top-0 left-0 right-0 z-50 glass-strong border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-2">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm">TF</div>
+        <span class="text-xl font-bold font-poppins gradient-text-cyan hidden sm:block">TechFix<span class="text-white">Daily</span></span>
+      </a>
+      <div class="hidden md:flex gap-6">
+        <a href="index.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium">Home</a>
+        <a href="fixes.html" class="nav-link text-cyan-400 text-sm font-medium">Tech Fixes</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="pt-20 relative">
+    <div class="relative h-72">
+      <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1400&auto=format&fit=crop&q=80" alt="Virus Removal" class="w-full h-full object-cover" />
+      <div class="absolute inset-0" style="background:linear-gradient(to bottom,transparent 20%,#0a0a1a 100%)"></div>
+      <div class="absolute bottom-0 left-0 right-0 max-w-4xl mx-auto px-4 pb-8">
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="tag bg-red-500 text-white">Security</span>
+          <span class="tag bg-red-500/20 text-red-400 border border-red-500/30">Hard</span>
+        </div>
+        <h1 class="font-poppins text-3xl sm:text-4xl font-black text-white leading-tight">Remove Virus Without Antivirus: Manual Step-by-Step Guide</h1>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-4xl mx-auto px-4 py-10">
+    <div class="article-content">
+      <p>If your PC is heavily infected, a virus might block you from opening or downloading any antivirus software. When this happens, you have to fight back manually using Windows' built-in tools. Here is how to hunt down and destroy malware by hand.</p>
+      
+      <h2>Step 1: Enter Safe Mode with Networking</h2>
+      <p>Viruses are programs. If Windows boots normally, the virus starts running and defends itself. Safe Mode prevents third-party apps from starting.</p>
+      <div class="step-card">
+        <ol class="list-decimal text-slate-300">
+          <li>Hold down the <strong>Shift</strong> key and click the <strong>Restart</strong> button in your Windows start menu.</li>
+          <li>Your PC will boot to a blue screen. Click <strong>Troubleshoot > Advanced Options > Startup Settings > Restart</strong>.</li>
+          <li>When it reboots, press <strong>5</strong> or <strong>F5</strong> to enter <em>Safe Mode with Networking</em>.</li>
+        </ol>
+      </div>
+
+      <h2>Step 2: Kill the Virus in Task Manager</h2>
+      <p>Now that we are in Safe Mode, we need to find the malicious process.</p>
+      <div class="step-card">
+        <ol class="list-decimal text-slate-300">
+          <li>Press <code>Ctrl + Shift + Esc</code> to open Task Manager. Click "More details" if necessary.</li>
+          <li>Go to the <strong>Startup</strong> tab. Look for anything highly suspicious (e.g., weird names like "dsjhkjh.exe", programs with no publisher, or scripts). Right-click and select <strong>Disable</strong>.</li>
+          <li>Go back to the <strong>Processes</strong> tab. If you see a suspicious process eating CPU, right-click it and select <strong>Open file location</strong>. (Do not close this folder window).</li>
+          <li>Back in Task Manager, right-click the process and select <strong>End task</strong>.</li>
+        </ol>
+      </div>
+
+      <h2>Step 3: Delete the Malicious Files</h2>
+      <p>Go to the folder window you opened in Step 2. Because you just killed the task, the file is no longer "in use" and can be deleted.</p>
+      <div class="step-card">
+        <ol class="list-decimal text-slate-300">
+          <li>Hold <strong>Shift</strong> and press <strong>Delete</strong> on the suspicious file to permanently delete it without sending it to the Recycle Bin.</li>
+          <li><em>Common virus hiding spots:</em> Check <code>C:\Users\[YourName]\AppData\Local\Temp</code> and delete everything inside the Temp folder.</li>
+        </ol>
+      </div>
+
+      <h2>Step 4: Clean the Registry (Advanced)</h2>
+      <p>Malware often edits the registry to ensure it starts up again even if you delete the file.</p>
+      <div class="step-card">
+        <ol class="list-decimal text-slate-300">
+          <li>Press <code>Win + R</code>, type <code>regedit</code>, and press Enter.</li>
+          <li>Navigate to this exact path: <code>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run</code></li>
+          <li>Look at the entries on the right. If you see a key pointing to the virus file you just deleted, right-click the key and select <strong>Delete</strong>.</li>
+          <li>Check the same location under <code>HKEY_LOCAL_MACHINE</code> as well.</li>
+        </ol>
+      </div>
+
+      <h2>Step 5: Run Windows Defender Offline Scan</h2>
+      <p>Now that the virus is crippled, restart your PC normally. Immediately go to Settings > Update & Security > Windows Security > Virus & threat protection > Scan options. Select <strong>Microsoft Defender Offline scan</strong> and click Scan now. This will reboot your PC and let Defender scan the hard drive before Windows fully loads, wiping out any remnants.</p>
+    </div>
+  </div>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

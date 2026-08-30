@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Android Apps Keep Crashing? Here's the Fix - TechFixDaily</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script>tailwind.config={theme:{extend:{fontFamily:{inter:['Inter','sans-serif'],poppins:['Poppins','sans-serif']}}}}</script>
+  <style>
+    body { font-family:'Inter',sans-serif; background:#0a0a1a; color:#e2e8f0; }
+    .glass-strong { background:rgba(255,255,255,0.08); backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.15); }
+    .gradient-text-cyan { background:linear-gradient(135deg,#06b6d4,#22d3ee); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .nav-link { position:relative; }
+    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:linear-gradient(90deg,#06b6d4,#7c3aed); transition:width 0.3s; }
+    .nav-link:hover::after { width:100%; }
+    .tag { display:inline-block; padding:2px 10px; border-radius:999px; font-size:0.7rem; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; }
+    .article-content h2 { font-family:'Poppins',sans-serif; font-size:1.5rem; font-weight:800; color:white; margin-top:2.5rem; margin-bottom:1rem; }
+    .article-content p { color:#94a3b8; line-height:1.8; margin-bottom:1rem; }
+    .article-content ul, .article-content ol { padding-left:1.5rem; color:#94a3b8; margin-bottom:1rem; }
+    .article-content li { margin-bottom:0.5rem; line-height:1.7; }
+    .step-card { border-left:3px solid #16a34a; background:rgba(22,163,74,0.05); border-radius:0 12px 12px 0; padding:1rem; margin-bottom:1rem; }
+  </style>
+</head>
+<body class="min-h-screen">
+  <nav class="fixed top-0 left-0 right-0 z-50 glass-strong border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-2">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm">TF</div>
+        <span class="text-xl font-bold font-poppins gradient-text-cyan hidden sm:block">TechFix<span class="text-white">Daily</span></span>
+      </a>
+      <div class="hidden md:flex gap-6">
+        <a href="index.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium">Home</a>
+        <a href="fixes.html" class="nav-link text-cyan-400 text-sm font-medium">Tech Fixes</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="pt-20 relative">
+    <div class="relative h-72">
+      <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1400&auto=format&fit=crop&q=80" alt="Android Apps" class="w-full h-full object-cover" />
+      <div class="absolute inset-0" style="background:linear-gradient(to bottom,transparent 20%,#0a0a1a 100%)"></div>
+      <div class="absolute bottom-0 left-0 right-0 max-w-4xl mx-auto px-4 pb-8">
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="tag bg-green-500 text-white">Android</span>
+          <span class="tag bg-green-500/20 text-green-400 border border-green-500/30">Easy</span>
+        </div>
+        <h1 class="font-poppins text-3xl sm:text-4xl font-black text-white leading-tight">Android Apps Keep Crashing? Here's the Fix</h1>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-4xl mx-auto px-4 py-10">
+    <div class="article-content">
+      <p>You open an app, and within seconds, it kicks you back to the home screen. Or maybe you get a popup saying "App has stopped working". App crashes on Android are usually related to corrupted cache data or an outdated Android System WebView component.</p>
+      
+      <h2>Fix 1: Clear the App's Cache and Data</h2>
+      <p>This is the most common fix. Over time, temporary files (cache) can get corrupted.</p>
+      <div class="step-card">
+        <ol class="list-decimal text-slate-300">
+          <li>Go to <strong>Settings > Apps > See all apps</strong>.</li>
+          <li>Find the app that keeps crashing and tap on it.</li>
+          <li>Tap <strong>Storage & cache</strong>.</li>
+          <li>Tap <strong>Clear cache</strong> first, then try opening the app.</li>
+          <li>If it still crashes, go back and tap <strong>Clear storage</strong> (Note: This will log you out and reset the app's settings).</li>
+        </ol>
+      </div>
+
+      <h2>Fix 2: Update Android System WebView</h2>
+      <p>If <em>multiple</em> apps are crashing all at once (especially apps that load web pages internally like Gmail, Twitter, or banking apps), the Android System WebView component is likely the culprit.</p>
+      <div class="step-card">
+        <ol class="list-decimal text-slate-300">
+          <li>Open the <strong>Google Play Store</strong>.</li>
+          <li>Search for <strong>Android System WebView</strong>.</li>
+          <li>If it says "Update", tap it. If it says "Uninstall", tap that, then tap "Update" again to reinstall a fresh copy.</li>
+          <li>Search for <strong>Google Chrome</strong> and update it as well (Chrome handles WebView on some Android versions).</li>
+          <li>Restart your phone.</li>
+        </ol>
+      </div>
+
+      <h2>Fix 3: Check for System Updates</h2>
+      <p>Sometimes the app has been updated for a newer version of Android, and your phone's OS is falling behind.</p>
+      <div class="step-card">
+        <ol class="list-decimal text-slate-300">
+          <li>Go to <strong>Settings > System > System update</strong>.</li>
+          <li>Tap <strong>Check for update</strong> and install any pending updates.</li>
+        </ol>
+      </div>
+
+      <h2>Fix 4: Reinstall the App</h2>
+      <p>If clearing the cache didn't work, the app installation itself might be corrupted.</p>
+      <p>Long-press the app icon on your home screen, select Uninstall, then go to the Play Store and install it fresh.</p>
+
+    </div>
+  </div>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

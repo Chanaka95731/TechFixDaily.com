@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MacBook Overheating Fix - Stay Cool While Working - TechFixDaily</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script>tailwind.config={theme:{extend:{fontFamily:{inter:['Inter','sans-serif'],poppins:['Poppins','sans-serif']}}}}</script>
+  <style>
+    body { font-family:'Inter',sans-serif; background:#0a0a1a; color:#e2e8f0; }
+    .glass-strong { background:rgba(255,255,255,0.08); backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.15); }
+    .gradient-text-cyan { background:linear-gradient(135deg,#06b6d4,#22d3ee); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .nav-link { position:relative; }
+    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:linear-gradient(90deg,#06b6d4,#7c3aed); transition:width 0.3s; }
+    .nav-link:hover::after { width:100%; }
+    .tag { display:inline-block; padding:2px 10px; border-radius:999px; font-size:0.7rem; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; }
+    .article-content h2 { font-family:'Poppins',sans-serif; font-size:1.5rem; font-weight:800; color:white; margin-top:2.5rem; margin-bottom:1rem; }
+    .article-content p { color:#94a3b8; line-height:1.8; margin-bottom:1rem; }
+    .article-content ul, .article-content ol { padding-left:1.5rem; color:#94a3b8; margin-bottom:1rem; }
+    .article-content li { margin-bottom:0.5rem; line-height:1.7; }
+    .step-card { border-left:3px solid #ec4899; background:rgba(236,72,153,0.05); border-radius:0 12px 12px 0; padding:1rem; margin-bottom:1rem; }
+  </style>
+</head>
+<body class="min-h-screen">
+  <nav class="fixed top-0 left-0 right-0 z-50 glass-strong border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-2">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm">TF</div>
+        <span class="text-xl font-bold font-poppins gradient-text-cyan hidden sm:block">TechFix<span class="text-white">Daily</span></span>
+      </a>
+      <div class="hidden md:flex gap-6">
+        <a href="index.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium">Home</a>
+        <a href="fixes.html" class="nav-link text-cyan-400 text-sm font-medium">Tech Fixes</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="pt-20 relative">
+    <div class="relative h-72">
+      <img src="https://images.unsplash.com/photo-1616763355548-1b606f439f86?w=1400&auto=format&fit=crop&q=80" alt="MacBook" class="w-full h-full object-cover" />
+      <div class="absolute inset-0" style="background:linear-gradient(to bottom,transparent 20%,#0a0a1a 100%)"></div>
+      <div class="absolute bottom-0 left-0 right-0 max-w-4xl mx-auto px-4 pb-8">
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="tag bg-pink-500 text-white">macOS</span>
+          <span class="tag bg-yellow-500/20 text-yellow-400 border border-yellow-500/30">Medium</span>
+        </div>
+        <h1 class="font-poppins text-3xl sm:text-4xl font-black text-white leading-tight">MacBook Overheating Fix: Stay Cool While Working</h1>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-4xl mx-auto px-4 py-10">
+    <div class="article-content">
+      <p>Is your MacBook sounding like a jet engine ready for takeoff? Overheating is a massive issue for older Intel Macs, and even occasionally affects the newer M-series chips if a background process goes rogue. Excessive heat degrades your battery health and slows down performance (thermal throttling).</p>
+      
+      <h2>Fix 1: Check Activity Monitor for Runaway Apps</h2>
+      <p>Often, a single app getting stuck in a loop causes 100% CPU usage, generating massive heat.</p>
+      <div class="step-card">
+        <ol class="list-decimal text-slate-300">
+          <li>Press <code>Cmd + Space</code> to open Spotlight, type <strong>Activity Monitor</strong>, and hit Enter.</li>
+          <li>Click on the <strong>CPU</strong> tab at the top.</li>
+          <li>Click the <strong>% CPU</strong> column header to sort by highest usage.</li>
+          <li>If you see an app consistently taking over 70-80% CPU and you aren't actively using it, select it and click the <strong>X icon</strong> at the top to force quit.</li>
+        </ol>
+      </div>
+
+      <h2>Fix 2: Reset the SMC (Intel Macs Only)</h2>
+      <p>The System Management Controller (SMC) manages battery and thermal management (fans). Resetting it often fixes fan issues. <em>Note: M1/M2/M3 Macs do not have an SMC to reset.</em></p>
+      <div class="step-card">
+        <p class="text-white font-bold mb-2">For MacBooks with T2 Security Chip (2018-2020):</p>
+        <ol class="list-decimal text-slate-300">
+          <li>Shut down your Mac.</li>
+          <li>Press and hold <strong>Control (left) + Option (left) + Shift (right)</strong> for 7 seconds.</li>
+          <li>Keep holding those keys, and also press and hold the <strong>Power button</strong> for 7 more seconds.</li>
+          <li>Release all keys, wait a few seconds, and turn the Mac back on.</li>
+        </ol>
+      </div>
+
+      <h2>Fix 3: Elevate Your MacBook</h2>
+      <p>MacBooks (especially the Air) use the aluminum chassis to dissipate heat. If you use it on a bed, pillow, or your lap, it traps the heat entirely.</p>
+      <p>Always use your Mac on a hard, flat surface (like a desk). If you push it hard with video editing, invest in a cheap laptop stand to improve airflow underneath the chassis.</p>
+
+      <h2>Fix 4: Control Your Fans Manually</h2>
+      <p>macOS prefers a silent laptop over a cool laptop, meaning it waits until the Mac is very hot before spinning up the fans.</p>
+      <div class="step-card">
+        <ol class="list-decimal text-slate-300">
+          <li>Download a free app called <strong>Macs Fan Control</strong>.</li>
+          <li>Install and open the app.</li>
+          <li>You can set a "Sensor-based" rule to make the fans spin up earlier, keeping the chassis much cooler at the expense of a little bit of fan noise.</li>
+        </ol>
+      </div>
+
+      <h2>Fix 5: Close Endless Browser Tabs</h2>
+      <p>Google Chrome is notorious for eating RAM and CPU on macOS. If you have 50 tabs open, your Mac is working incredibly hard to keep them all active.</p>
+      <p>Use Safari (which is far more optimized for macOS batteries and thermals) or use extensions like "The Great Suspender" in Chrome to put unused tabs to sleep.</p>
+
+    </div>
+  </div>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

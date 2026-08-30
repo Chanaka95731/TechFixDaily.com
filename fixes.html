@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tech Fixes - TechFixDaily | Browse All Solutions</title>
+  <meta name="description" content="Browse 500+ tech fixes and solutions for Windows, Android, macOS, Network issues and more." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { inter: ['Inter','sans-serif'], poppins: ['Poppins','sans-serif'] },
+          colors: {
+            dark: { 900:'#0a0a1a', 800:'#0d0d24', 700:'#111130', 600:'#1a1a3e', 500:'#252550' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Inter', sans-serif; background: #0a0a1a; color: #e2e8f0; }
+    .glass { background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
+    .glass-strong { background: rgba(255,255,255,0.08); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.15); }
+    .gradient-text { background: linear-gradient(135deg, #06b6d4, #7c3aed, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .gradient-text-cyan { background: linear-gradient(135deg, #06b6d4, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .card-hover { transition: all 0.3s ease; }
+    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(6,182,212,0.2); border-color: rgba(6,182,212,0.4) !important; }
+    .nav-link { position:relative; }
+    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background: linear-gradient(90deg,#06b6d4,#7c3aed); transition: width 0.3s; }
+    .nav-link:hover::after { width:100%; }
+    .tag { display:inline-block; padding:2px 10px; border-radius:999px; font-size:0.7rem; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; }
+    .filter-btn { transition: all 0.2s; }
+    .filter-btn.active { background: linear-gradient(135deg, #06b6d4, #7c3aed); color: white; border-color: transparent; }
+    .glow-btn { box-shadow: 0 0 20px rgba(6,182,212,0.4); transition: all 0.3s; }
+    .glow-btn:hover { box-shadow: 0 0 40px rgba(6,182,212,0.7); }
+    .difficulty-easy { color: #22c55e; }
+    .difficulty-medium { color: #f59e0b; }
+    .difficulty-hard { color: #ef4444; }
+    .fix-card { transition: all 0.3s; }
+    .fix-card:hover { transform: translateY(-4px); }
+    .search-highlight { background: rgba(6,182,212,0.2); border-radius: 3px; padding: 0 2px; }
+  </style>
+</head>
+<body class="min-h-screen">
+
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 left-0 right-0 z-50 glass-strong border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-2 group">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm shadow-lg group-hover:scale-110 transition-transform">TF</div>
+          <span class="text-xl font-bold font-poppins gradient-text-cyan hidden sm:block">TechFix<span class="text-white">Daily</span></span>
+        </a>
+        <div class="hidden md:flex items-center gap-6">
+          <a href="index.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium transition-colors">Home</a>
+          <a href="fixes.html" class="nav-link text-cyan-400 text-sm font-medium">Tech Fixes</a>
+          <a href="tips.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium transition-colors">Tips & Tricks</a>
+          <a href="categories.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium transition-colors">Categories</a>
+          <a href="about.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium transition-colors">About</a>
+          <a href="contact.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium transition-colors">Contact</a>
+        </div>
+        <button class="md:hidden glass p-2 rounded-lg" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+          <i data-lucide="menu" class="w-5 h-5 text-slate-300"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden glass border-t border-white/10 px-4 pb-4 pt-2">
+      <div class="flex flex-col gap-3">
+        <a href="index.html" class="text-slate-300 py-2">🏠 Home</a>
+        <a href="fixes.html" class="text-cyan-400 py-2">🔧 Tech Fixes</a>
+        <a href="tips.html" class="text-slate-300 py-2">💡 Tips & Tricks</a>
+        <a href="categories.html" class="text-slate-300 py-2">📁 Categories</a>
+        <a href="about.html" class="text-slate-300 py-2">ℹ️ About</a>
+        <a href="contact.html" class="text-slate-300 py-2">✉️ Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="pt-24 pb-12 relative overflow-hidden" style="background: radial-gradient(ellipse at 30% 50%, rgba(6,182,212,0.1) 0%, transparent 60%), #0a0a1a;">
+    <div class="absolute top-10 right-10 w-72 h-72 bg-purple-600/10 rounded-full blur-3xl"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <!-- Breadcrumb -->
+      <div class="flex items-center gap-2 text-slate-500 text-sm mb-6">
+        <a href="index.html" class="hover:text-cyan-400 transition-colors">Home</a>
+        <i data-lucide="chevron-right" class="w-4 h-4"></i>
+        <span class="text-cyan-400">Tech Fixes</span>
+      </div>
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+        <div>
+          <div class="tag bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 mb-3">🔧 Tech Fixes</div>
+          <h1 class="font-poppins text-4xl sm:text-5xl font-black text-white">Browse All <span class="gradient-text">Tech Fixes</span></h1>
+          <p class="text-slate-400 mt-2 max-w-xl">500+ step-by-step solutions for your everyday tech problems</p>
+        </div>
+        <!-- Search -->
+        <div class="w-full lg:w-80">
+          <div class="relative">
+            <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400"></i>
+            <input type="text" id="searchInput" placeholder="Search fixes..." oninput="filterFixes()" class="w-full glass border border-white/20 rounded-xl pl-10 pr-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500/50 bg-transparent" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Category filters -->
+      <div class="flex flex-wrap gap-2 mt-6">
+        <button onclick="setFilter('all', this)" class="filter-btn active glass text-sm px-4 py-2 rounded-xl border border-white/20 font-medium">All</button>
+        <button onclick="setFilter('windows', this)" class="filter-btn glass text-slate-300 text-sm px-4 py-2 rounded-xl border border-white/20 font-medium hover:text-white">🪟 Windows</button>
+        <button onclick="setFilter('android', this)" class="filter-btn glass text-slate-300 text-sm px-4 py-2 rounded-xl border border-white/20 font-medium hover:text-white">🤖 Android</button>
+        <button onclick="setFilter('macos', this)" class="filter-btn glass text-slate-300 text-sm px-4 py-2 rounded-xl border border-white/20 font-medium hover:text-white">🍎 macOS</button>
+        <button onclick="setFilter('network', this)" class="filter-btn glass text-slate-300 text-sm px-4 py-2 rounded-xl border border-white/20 font-medium hover:text-white">🌐 Network</button>
+        <button onclick="setFilter('gaming', this)" class="filter-btn glass text-slate-300 text-sm px-4 py-2 rounded-xl border border-white/20 font-medium hover:text-white">🎮 Gaming</button>
+        <button onclick="setFilter('security', this)" class="filter-btn glass text-slate-300 text-sm px-4 py-2 rounded-xl border border-white/20 font-medium hover:text-white">🔒 Security</button>
+        <button onclick="setFilter('ios', this)" class="filter-btn glass text-slate-300 text-sm px-4 py-2 rounded-xl border border-white/20 font-medium hover:text-white">📱 iOS</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIXES GRID -->
+  <section class="pb-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Results count -->
+      <div class="flex items-center justify-between mb-6">
+        <p class="text-slate-400 text-sm">Showing <span id="fixCount" class="text-white font-semibold">12</span> fixes</p>
+        <select onchange="sortFixes(this.value)" class="glass border border-white/20 text-slate-300 text-sm px-3 py-2 rounded-lg focus:outline-none bg-transparent">
+          <option value="latest">Latest First</option>
+          <option value="popular">Most Popular</option>
+          <option value="rated">Highest Rated</option>
+        </select>
+      </div>
+
+      <div id="fixesGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Cards generated by JS -->
+      </div>
+
+      <!-- No results -->
+      <div id="noResults" class="hidden text-center py-20">
+        <div class="text-6xl mb-4">🔍</div>
+        <h3 class="text-white font-bold text-xl mb-2">No fixes found</h3>
+        <p class="text-slate-400">Try a different search term or category</p>
+      </div>
+
+      <!-- Load More -->
+      <div class="text-center mt-10">
+        <button onclick="loadMore()" id="loadMoreBtn" class="glow-btn bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold px-8 py-3 rounded-xl hover:opacity-90 transition-all flex items-center gap-2 mx-auto">
+          <i data-lucide="refresh-cw" class="w-4 h-4"></i> Load More Fixes
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#0a0a1a] border-t border-white/5 py-10">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <a href="index.html" class="text-xl font-bold font-poppins text-white">TechFix<span class="gradient-text-cyan">Daily</span></a>
+      <p class="text-slate-500 text-sm mt-2">© 2025 TechFixDaily. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="fixed bottom-6 right-6 w-12 h-12 glow-btn bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white shadow-lg opacity-0 translate-y-4 transition-all duration-300 z-50">
+    <i data-lucide="arrow-up" class="w-5 h-5"></i>
+  </button>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 600, once: true, offset: 60 });
+    lucide.createIcons();
+
+    window.addEventListener('scroll', () => {
+      const btn = document.getElementById('backToTop');
+      btn.style.opacity = window.scrollY > 300 ? '1' : '0';
+      btn.style.transform = window.scrollY > 300 ? 'translateY(0)' : 'translateY(16px)';
+    });
+
+    const allFixes = [
+      { id:1, cat:'windows', title:'Fix Windows 11 BSOD After Update', desc:'Permanent solution for the Blue Screen of Death caused by latest Windows 11 updates. Includes registry fix and driver rollback.', img:'https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=400&auto=format&fit=crop&q=80', difficulty:'medium', time:'5 min', views:'12.4K', rating:4.9, tags:['BSOD','Windows 11','Update'] },
+      { id:2, cat:'android', title:'Android Battery Draining Fast — 7 Real Fixes', desc:'Stop your Android battery from draining in hours. Covers background app control, adaptive battery, display optimization.', img:'https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400&auto=format&fit=crop&q=80', difficulty:'easy', time:'3 min', views:'9.8K', rating:4.8, tags:['Battery','Android','Performance'] },
+      { id:3, cat:'network', title:'WiFi Keeps Dropping? Complete Fix 2025', desc:'Fix intermittent WiFi disconnects on Windows, Android, and macOS. Router settings, driver updates, and network reset guide.', img:'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&auto=format&fit=crop&q=80', difficulty:'easy', time:'4 min', views:'8.2K', rating:4.7, tags:['WiFi','Network','Internet'] },
+      { id:4, cat:'macos', title:'MacBook Overheating Fix — Stay Cool', desc:'Stop your MacBook from overheating under heavy load. SMC reset, fan control, activity monitor, and thermal paste guide.', img:'https://images.unsplash.com/photo-1616763355548-1b606f439f86?w=400&auto=format&fit=crop&q=80', difficulty:'medium', time:'6 min', views:'7.1K', rating:4.9, tags:['MacBook','Overheating','Temperature'] },
+      { id:5, cat:'gaming', title:'Fix FPS Drop in PC Games — Boost 50%', desc:'Ultimate guide to eliminating FPS drops, stuttering, and lag in PC games. GPU settings, game mode, and background process kill.', img:'https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=400&auto=format&fit=crop&q=80', difficulty:'medium', time:'8 min', views:'15.3K', rating:4.9, tags:['Gaming','FPS','Performance'] },
+      { id:6, cat:'windows', title:'Windows 11 Slow Startup Fix — Boot in 15s', desc:'Make Windows 11 boot lightning fast. Disable unnecessary services, optimize startup apps, and enable fast startup mode.', img:'https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=400&auto=format&fit=crop&q=80', difficulty:'easy', time:'4 min', views:'11.7K', rating:4.8, tags:['Startup','Windows 11','Speed'] },
+      { id:7, cat:'android', title:'Android Apps Keep Crashing — Fixed!', desc:'Solve Android app crashes with cache clearing, app data reset, and APK reinstall. Works for all popular apps.', img:'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&auto=format&fit=crop&q=80', difficulty:'easy', time:'3 min', views:'6.4K', rating:4.7, tags:['Apps','Crash','Android'] },
+      { id:8, cat:'security', title:'Remove Virus Without Antivirus — Step by Step', desc:'Manually detect and remove malware from Windows using built-in tools, Task Manager, and safe mode scanning.', img:'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=400&auto=format&fit=crop&q=80', difficulty:'hard', time:'10 min', views:'19.2K', rating:4.8, tags:['Virus','Malware','Security'] },
+      { id:9, cat:'ios', title:'iPhone Storage Full? Free Up Space Now', desc:'Recover gigabytes of iPhone storage without losing photos. Optimize iOS storage, offload apps, and clear system cache.', img:'https://images.unsplash.com/photo-1556656793-08538906a9f8?w=400&auto=format&fit=crop&q=80', difficulty:'easy', time:'4 min', views:'8.9K', rating:4.9, tags:['iPhone','Storage','iOS'] },
+      { id:10, cat:'network', title:'Slow Internet? Speed Up by 3x Today', desc:'Boost your internet speed with DNS optimization, router placement tips, and ISP throttling bypass techniques.', img:'https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=400&auto=format&fit=crop&q=80', difficulty:'easy', time:'5 min', views:'13.6K', rating:4.7, tags:['Internet','Speed','Network'] },
+      { id:11, cat:'windows', title:'Fix "No Internet" After Windows Update', desc:'Restore internet connection after Windows update breaks network adapter. Driver reinstall and Winsock reset guide.', img:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&auto=format&fit=crop&q=80', difficulty:'medium', time:'6 min', views:'9.3K', rating:4.8, tags:['Windows','Internet','Update'] },
+      { id:12, cat:'macos', title:'Mac Running Slow? Speed Up in 10 Minutes', desc:'Comprehensive macOS performance guide — cleanup junk files, manage RAM, disable visual effects, and optimize disk.', img:'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&auto=format&fit=crop&q=80', difficulty:'easy', time:'7 min', views:'7.8K', rating:4.6, tags:['macOS','Slow','Performance'] },
+    ];
+
+    let currentFilter = 'all';
+    let displayCount = 12;
+
+    function renderFixes(fixes) {
+      const grid = document.getElementById('fixesGrid');
+      const noResults = document.getElementById('noResults');
+      document.getElementById('fixCount').textContent = fixes.length;
+
+      if (fixes.length === 0) {
+        grid.innerHTML = '';
+        noResults.classList.remove('hidden');
+        return;
+      }
+      noResults.classList.add('hidden');
+
+      const diffColors = { easy: 'text-green-400 bg-green-500/10', medium: 'text-yellow-400 bg-yellow-500/10', hard: 'text-red-400 bg-red-500/10' };
+      const catColors = { windows: 'bg-cyan-500', android: 'bg-green-500', macos: 'bg-pink-500', network: 'bg-blue-500', gaming: 'bg-yellow-500 text-black font-bold', security: 'bg-red-500', ios: 'bg-purple-500' };
+
+      grid.innerHTML = fixes.map((f, i) => `
+        <div class="card-hover glass rounded-2xl overflow-hidden border border-white/10" data-aos="fade-up" data-aos-delay="${(i % 3) * 80}">
+          <a href="article.html">
+            <div class="relative h-44 overflow-hidden">
+              <img src="${f.img}" alt="${f.title}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+              <span class="absolute top-3 left-3 tag ${catColors[f.cat] || 'bg-cyan-500'} text-white">${f.cat.toUpperCase()}</span>
+              <span class="absolute top-3 right-3 tag ${diffColors[f.difficulty]} border border-current/30">${f.difficulty}</span>
+            </div>
+          </a>
+          <div class="p-5">
+            <h3 class="text-white font-bold text-base mb-2 leading-snug line-clamp-2">
+              <a href="article.html" class="hover:text-cyan-400 transition-colors">${f.title}</a>
+            </h3>
+            <p class="text-slate-400 text-sm mb-4 line-clamp-2">${f.desc}</p>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              ${f.tags.map(t => `<span class="tag bg-white/5 text-slate-400 border border-white/10">${t}</span>`).join('')}
+            </div>
+            <div class="flex items-center justify-between text-xs text-slate-500">
+              <div class="flex items-center gap-3">
+                <span class="flex items-center gap-1"><svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> ${f.time}</span>
+                <span class="flex items-center gap-1"><svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> ${f.views}</span>
+              </div>
+              <span class="text-yellow-400 font-semibold">★ ${f.rating}</span>
+            </div>
+          </div>
+        </div>
+      `).join('');
+      AOS.refresh();
+      lucide.createIcons();
+    }
+
+    function filterFixes() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      let filtered = allFixes.filter(f => {
+        const matchCat = currentFilter === 'all' || f.cat === currentFilter;
+        const matchSearch = !query || f.title.toLowerCase().includes(query) || f.desc.toLowerCase().includes(query) || f.tags.some(t => t.toLowerCase().includes(query));
+        return matchCat && matchSearch;
+      });
+      renderFixes(filtered);
+    }
+
+    function setFilter(cat, btn) {
+      currentFilter = cat;
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filterFixes();
+    }
+
+    function sortFixes(val) {
+      if (val === 'popular') allFixes.sort((a,b) => parseFloat(b.views) - parseFloat(a.views));
+      else if (val === 'rated') allFixes.sort((a,b) => b.rating - a.rating);
+      else allFixes.sort((a,b) => a.id - b.id);
+      filterFixes();
+    }
+
+    function loadMore() {
+      displayCount += 6;
+      document.getElementById('loadMoreBtn').innerHTML = '<span>Loading...</span>';
+      setTimeout(() => {
+        document.getElementById('loadMoreBtn').innerHTML = '<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg> Load More Fixes';
+      }, 800);
+    }
+
+    renderFixes(allFixes);
+  </script>
+</body>
+</html>

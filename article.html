@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fix Windows 11 Lag & Slow Performance - TechFixDaily</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script>tailwind.config={theme:{extend:{fontFamily:{inter:['Inter','sans-serif'],poppins:['Poppins','sans-serif']}}}}</script>
+  <style>
+    body { font-family:'Inter',sans-serif; background:#0a0a1a; color:#e2e8f0; }
+    .glass { background:rgba(255,255,255,0.05); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.1); }
+    .glass-strong { background:rgba(255,255,255,0.08); backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.15); }
+    .gradient-text { background:linear-gradient(135deg,#06b6d4,#7c3aed,#ec4899); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .gradient-text-cyan { background:linear-gradient(135deg,#06b6d4,#22d3ee); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .nav-link { position:relative; }
+    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:linear-gradient(90deg,#06b6d4,#7c3aed); transition:width 0.3s; }
+    .nav-link:hover::after { width:100%; }
+    .tag { display:inline-block; padding:2px 10px; border-radius:999px; font-size:0.7rem; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; }
+    .glow-btn { box-shadow:0 0 20px rgba(6,182,212,0.4); }
+    /* Reading progress bar */
+    #progressBar { position:fixed; top:64px; left:0; height:3px; background:linear-gradient(90deg,#06b6d4,#7c3aed); z-index:60; transition:width 0.1s; }
+    /* Article styles */
+    .article-content h2 { font-family:'Poppins',sans-serif; font-size:1.5rem; font-weight:800; color:white; margin-top:2.5rem; margin-bottom:1rem; }
+    .article-content h3 { font-size:1.1rem; font-weight:700; color:#e2e8f0; margin-top:1.5rem; margin-bottom:0.75rem; }
+    .article-content p { color:#94a3b8; line-height:1.8; margin-bottom:1rem; }
+    .article-content ul, .article-content ol { padding-left:1.5rem; color:#94a3b8; margin-bottom:1rem; }
+    .article-content li { margin-bottom:0.5rem; line-height:1.7; }
+    .article-content code { background:rgba(6,182,212,0.1); color:#22d3ee; padding:2px 6px; border-radius:4px; font-family:monospace; font-size:0.85em; }
+    .article-content pre { background:#0d0d24; border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:1.25rem; overflow-x:auto; margin-bottom:1rem; }
+    .article-content pre code { background:none; color:#e2e8f0; padding:0; }
+    .step-card { border-left:3px solid #06b6d4; background:rgba(6,182,212,0.05); border-radius:0 12px 12px 0; }
+    .card-hover { transition:all 0.3s ease; }
+    .card-hover:hover { transform:translateY(-4px); box-shadow:0 12px 40px rgba(6,182,212,0.2); }
+    .toc-link { display:block; padding:6px 12px; border-radius:8px; color:#94a3b8; font-size:0.875rem; transition:all 0.2s; }
+    .toc-link:hover, .toc-link.active { background:rgba(6,182,212,0.1); color:#06b6d4; border-left:2px solid #06b6d4; }
+    .share-btn { transition:all 0.2s; }
+    .share-btn:hover { transform:scale(1.1); }
+  </style>
+</head>
+<body class="min-h-screen">
+
+  <!-- Reading Progress Bar -->
+  <div id="progressBar" style="width:0%"></div>
+
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 left-0 right-0 z-50 glass-strong border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-2">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm">TF</div>
+          <span class="text-xl font-bold font-poppins gradient-text-cyan hidden sm:block">TechFix<span class="text-white">Daily</span></span>
+        </a>
+        <div class="hidden md:flex items-center gap-6">
+          <a href="index.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium">Home</a>
+          <a href="fixes.html" class="nav-link text-cyan-400 text-sm font-medium">Tech Fixes</a>
+          <a href="tips.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium">Tips & Tricks</a>
+          <a href="categories.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium">Categories</a>
+          <a href="about.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium">About</a>
+          <a href="contact.html" class="nav-link text-slate-300 hover:text-white text-sm font-medium">Contact</a>
+        </div>
+        <button class="md:hidden glass p-2 rounded-lg" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+          <i data-lucide="menu" class="w-5 h-5 text-slate-300"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden glass border-t border-white/10 px-4 pb-4 pt-2">
+      <div class="flex flex-col gap-3">
+        <a href="index.html" class="text-slate-300 py-2">🏠 Home</a>
+        <a href="fixes.html" class="text-cyan-400 py-2">🔧 Tech Fixes</a>
+        <a href="tips.html" class="text-slate-300 py-2">💡 Tips & Tricks</a>
+        <a href="categories.html" class="text-slate-300 py-2">📁 Categories</a>
+        <a href="about.html" class="text-slate-300 py-2">ℹ️ About</a>
+        <a href="contact.html" class="text-slate-300 py-2">✉️ Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ARTICLE HERO -->
+  <section class="pt-20 relative overflow-hidden">
+    <div class="relative h-72 sm:h-96">
+      <img src="https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=1400&auto=format&fit=crop&q=80" alt="Windows Fix" class="w-full h-full object-cover" />
+      <div class="absolute inset-0" style="background:linear-gradient(to bottom,transparent 20%,#0a0a1a 100%)"></div>
+      <div class="absolute bottom-0 left-0 right-0 max-w-4xl mx-auto px-4 sm:px-6 pb-8">
+        <!-- Breadcrumb -->
+        <div class="flex items-center gap-2 text-slate-400 text-sm mb-4">
+          <a href="index.html" class="hover:text-cyan-400">Home</a>
+          <i data-lucide="chevron-right" class="w-3 h-3"></i>
+          <a href="fixes.html" class="hover:text-cyan-400">Tech Fixes</a>
+          <i data-lucide="chevron-right" class="w-3 h-3"></i>
+          <span class="text-cyan-400">Windows</span>
+        </div>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="tag bg-cyan-500 text-white">Windows</span>
+          <span class="tag bg-yellow-500/20 text-yellow-400 border border-yellow-500/30">Medium</span>
+          <span class="tag bg-green-500/20 text-green-400 border border-green-500/30">✓ Verified Fix</span>
+        </div>
+        <h1 class="font-poppins text-3xl sm:text-4xl font-black text-white leading-tight">Fix Windows 11 Lag & Slow Performance in 2025</h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLE META -->
+  <section class="py-6 border-b border-white/5 max-w-4xl mx-auto px-4 sm:px-6">
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-4">
+        <div class="flex items-center gap-2">
+          <div class="w-9 h-9 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">TF</div>
+          <div>
+            <div class="text-white font-semibold text-sm">TechFixDaily Team</div>
+            <div class="text-slate-500 text-xs">August 27, 2025</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 text-slate-500 text-sm">
+          <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3 h-3"></i> 5 min read</span>
+          <span class="flex items-center gap-1"><i data-lucide="eye" class="w-3 h-3"></i> 12.4K views</span>
+        </div>
+      </div>
+      <!-- Share -->
+      <div class="flex items-center gap-2">
+        <span class="text-slate-500 text-sm">Share:</span>
+        <button onclick="share('twitter')" class="share-btn glass w-9 h-9 rounded-lg flex items-center justify-center text-slate-300 hover:text-cyan-400 border border-white/10" title="Share on Twitter">𝕏</button>
+        <button onclick="share('facebook')" class="share-btn glass w-9 h-9 rounded-lg flex items-center justify-center text-slate-300 hover:text-blue-400 border border-white/10" title="Share on Facebook">f</button>
+        <button onclick="copyLink()" class="share-btn glass w-9 h-9 rounded-lg flex items-center justify-center text-slate-300 hover:text-cyan-400 border border-white/10" title="Copy Link">
+          <i data-lucide="link" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Rating -->
+    <div class="flex items-center gap-3 mt-4">
+      <div class="flex gap-0.5">
+        <span class="text-yellow-400 text-lg">★★★★★</span>
+      </div>
+      <span class="text-white font-bold">4.9</span>
+      <span class="text-slate-500 text-sm">(2,847 ratings)</span>
+      <button onclick="rateArticle()" id="rateBtn" class="ml-2 text-slate-400 hover:text-yellow-400 text-sm transition-colors">Rate this fix ★</button>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10">
+    <div class="flex gap-10">
+      <!-- Article -->
+      <article class="flex-1 min-w-0">
+        <!-- Quick Summary -->
+        <div class="glass-strong rounded-2xl p-6 border border-cyan-500/20 mb-8">
+          <h2 class="text-white font-bold mb-3 flex items-center gap-2"><span class="text-cyan-400">⚡</span> Quick Summary</h2>
+          <p class="text-slate-300 text-sm leading-relaxed mb-4">Windows 11 slowing down is usually caused by bloated startup apps, outdated drivers, Visual Effects, or background processes. This guide covers all root causes and gives you working fixes — tested in 2025.</p>
+          <div class="grid sm:grid-cols-3 gap-3">
+            <div class="bg-black/30 rounded-xl p-3 text-center">
+              <div class="text-2xl mb-1">⏱️</div>
+              <div class="text-white font-bold text-sm">5 Minutes</div>
+              <div class="text-slate-500 text-xs">Fix Time</div>
+            </div>
+            <div class="bg-black/30 rounded-xl p-3 text-center">
+              <div class="text-2xl mb-1">📊</div>
+              <div class="text-white font-bold text-sm">Medium</div>
+              <div class="text-slate-500 text-xs">Difficulty</div>
+            </div>
+            <div class="bg-black/30 rounded-xl p-3 text-center">
+              <div class="text-2xl mb-1">💻</div>
+              <div class="text-white font-bold text-sm">Windows 11</div>
+              <div class="text-slate-500 text-xs">Platform</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="article-content" id="articleContent">
+          <h2>Why Is Windows 11 So Slow?</h2>
+          <p>Windows 11 can become sluggish for several reasons — most commonly due to startup apps consuming RAM before you even open anything, background services eating CPU, and visual effects that look pretty but kill performance on mid-range hardware.</p>
+          <p>The good news: all of these are fixable in minutes without reinstalling Windows.</p>
+
+          <h2>Fix 1: Disable Startup Apps</h2>
+          <div class="step-card p-4 mb-4">
+            <p class="text-white font-bold mb-2">This is the #1 performance killer. Every app you install tries to add itself to startup.</p>
+            <ol class="list-decimal text-slate-300">
+              <li>Press <code>Ctrl + Shift + Esc</code> to open Task Manager</li>
+              <li>Click the <strong>Startup Apps</strong> tab</li>
+              <li>Right-click any non-essential app → <strong>Disable</strong></li>
+              <li>Focus on disabling: Spotify, Discord, Teams, OneDrive (if not needed)</li>
+            </ol>
+          </div>
+          <p><strong class="text-green-400">Result:</strong> Boot time typically reduces by 20-40 seconds and RAM usage drops by 500MB-2GB.</p>
+
+          <h2>Fix 2: Disable Visual Effects</h2>
+          <div class="step-card p-4 mb-4">
+            <ol class="list-decimal text-slate-300">
+              <li>Search for <code>Adjust the appearance and performance of Windows</code></li>
+              <li>Select <strong>"Adjust for best performance"</strong></li>
+              <li>Or manually uncheck: Animate windows, Fade effects, Thumbnail previews</li>
+              <li>Click Apply & OK</li>
+            </ol>
+          </div>
+
+          <h2>Fix 3: Run System File Checker</h2>
+          <p>Corrupted system files can slow Windows to a crawl. Fix them with one command:</p>
+          <pre><code># Open PowerShell as Administrator, then run:
+sfc /scannow
+
+# After it completes, also run:
+DISM /Online /Cleanup-Image /RestoreHealth
+
+# Finally restart Windows</code></pre>
+          <p>This scan takes 5-10 minutes. Let it complete fully without interrupting.</p>
+
+          <h2>Fix 4: Clean Junk Files</h2>
+          <div class="step-card p-4 mb-4">
+            <ol class="list-decimal text-slate-300">
+              <li>Press <code>Win + R</code>, type <code>cleanmgr</code>, press Enter</li>
+              <li>Select your C: drive → OK</li>
+              <li>Check all boxes including <strong>Windows Update Cleanup</strong></li>
+              <li>Click <strong>Clean up system files</strong></li>
+              <li>This can free up 5-20GB of junk!</li>
+            </ol>
+          </div>
+
+          <h2>Fix 5: Update or Roll Back GPU Driver</h2>
+          <p>A bad GPU driver is often the cause of lag and stuttering. If lag started after a Windows update, roll back the driver:</p>
+          <div class="step-card p-4 mb-4">
+            <ol class="list-decimal text-slate-300">
+              <li>Right-click Start → Device Manager</li>
+              <li>Expand <strong>Display Adapters</strong></li>
+              <li>Right-click your GPU → Properties → Driver tab</li>
+              <li>Click <strong>Roll Back Driver</strong> if available</li>
+              <li>Or visit NVIDIA/AMD/Intel website to download latest driver</li>
+            </ol>
+          </div>
+
+          <h2>Fix 6: Enable Storage Sense</h2>
+          <p>Low storage = slow Windows. Enable automatic cleanup:</p>
+          <pre><code># Settings → System → Storage → Storage Sense
+# Turn ON and set to run every week
+# Also run "Cleanup now" for immediate results</code></pre>
+
+          <h2>✅ Results You Can Expect</h2>
+          <div class="glass rounded-xl p-5 border border-green-500/20 not-prose">
+            <ul class="space-y-2">
+              <li class="flex items-center gap-3 text-slate-300"><span class="text-green-400 text-lg">✓</span> Boot time: 40-60 seconds → 10-20 seconds</li>
+              <li class="flex items-center gap-3 text-slate-300"><span class="text-green-400 text-lg">✓</span> RAM usage at idle: -500MB to -2GB</li>
+              <li class="flex items-center gap-3 text-slate-300"><span class="text-green-400 text-lg">✓</span> App launch speed: 2-3x faster</li>
+              <li class="flex items-center gap-3 text-slate-300"><span class="text-green-400 text-lg">✓</span> Overall Windows responsiveness: Noticeably improved</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Helpful? -->
+        <div class="glass rounded-2xl p-6 border border-white/10 mt-8 text-center">
+          <h3 class="text-white font-bold mb-2">Was this fix helpful?</h3>
+          <p class="text-slate-400 text-sm mb-4">Help other users by rating this solution</p>
+          <div class="flex justify-center gap-3">
+            <button onclick="markHelpful(true)" id="yesBtn" class="flex items-center gap-2 glass border border-green-500/30 text-green-400 px-5 py-2.5 rounded-xl hover:bg-green-500/10 transition-all font-semibold">
+              <i data-lucide="thumbs-up" class="w-4 h-4"></i> Yes, Fixed It! <span class="bg-green-500/20 px-2 py-0.5 rounded-lg text-xs" id="yesCount">2,341</span>
+            </button>
+            <button onclick="markHelpful(false)" id="noBtn" class="flex items-center gap-2 glass border border-red-500/30 text-red-400 px-5 py-2.5 rounded-xl hover:bg-red-500/10 transition-all font-semibold">
+              <i data-lucide="thumbs-down" class="w-4 h-4"></i> Didn't Work <span class="bg-red-500/20 px-2 py-0.5 rounded-lg text-xs" id="noCount">89</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Sidebar -->
+      <aside class="hidden lg:block w-64 flex-shrink-0">
+        <!-- TOC -->
+        <div class="glass rounded-2xl p-5 border border-white/10 sticky top-24">
+          <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">📋 Table of Contents</h3>
+          <nav class="space-y-1">
+            <a href="#" class="toc-link active">Why Windows 11 Is Slow</a>
+            <a href="#" class="toc-link">Fix 1: Startup Apps</a>
+            <a href="#" class="toc-link">Fix 2: Visual Effects</a>
+            <a href="#" class="toc-link">Fix 3: System Files</a>
+            <a href="#" class="toc-link">Fix 4: Junk Files</a>
+            <a href="#" class="toc-link">Fix 5: GPU Driver</a>
+            <a href="#" class="toc-link">Fix 6: Storage Sense</a>
+            <a href="#" class="toc-link">Results</a>
+          </nav>
+          <div class="mt-6 pt-4 border-t border-white/10">
+            <h4 class="text-white font-semibold text-xs uppercase tracking-wider mb-3">Related Fixes</h4>
+            <div class="space-y-3">
+              <a href="article.html" class="flex items-center gap-2 group">
+                <div class="w-8 h-8 bg-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0 text-sm">🔵</div>
+                <span class="text-slate-400 text-xs group-hover:text-cyan-400 transition-colors">Fix BSOD After Update</span>
+              </a>
+              <a href="article.html" class="flex items-center gap-2 group">
+                <div class="w-8 h-8 bg-purple-500/20 rounded-lg flex items-center justify-center flex-shrink-0 text-sm">🚀</div>
+                <span class="text-slate-400 text-xs group-hover:text-cyan-400 transition-colors">Windows Boot in 15s</span>
+              </a>
+              <a href="article.html" class="flex items-center gap-2 group">
+                <div class="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0 text-sm">🌐</div>
+                <span class="text-slate-400 text-xs group-hover:text-cyan-400 transition-colors">Fix No Internet After Update</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- Related Articles -->
+  <section class="py-16 border-t border-white/5 bg-[#0d0d24]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <h2 class="font-poppins text-2xl font-black text-white mb-6">More Windows Fixes</h2>
+      <div class="grid sm:grid-cols-3 gap-5">
+        <a href="article.html" class="card-hover glass rounded-2xl overflow-hidden border border-white/10 block">
+          <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=400&auto=format&fit=crop&q=80" alt="fix" class="w-full h-36 object-cover" />
+          <div class="p-4">
+            <span class="tag bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 mb-2 inline-block">Windows</span>
+            <h3 class="text-white font-bold text-sm">Windows 11 Slow Startup — Boot in 15 Seconds</h3>
+            <div class="text-slate-500 text-xs mt-2 flex items-center gap-2">
+              <span>4 min</span>
+              <span>•</span>
+              <span>11.7K views</span>
+            </div>
+          </div>
+        </a>
+        <a href="article.html" class="card-hover glass rounded-2xl overflow-hidden border border-white/10 block">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&auto=format&fit=crop&q=80" alt="fix" class="w-full h-36 object-cover" />
+          <div class="p-4">
+            <span class="tag bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 mb-2 inline-block">Windows</span>
+            <h3 class="text-white font-bold text-sm">Fix "No Internet" After Windows Update</h3>
+            <div class="text-slate-500 text-xs mt-2 flex items-center gap-2">
+              <span>6 min</span>
+              <span>•</span>
+              <span>9.3K views</span>
+            </div>
+          </div>
+        </a>
+        <a href="article.html" class="card-hover glass rounded-2xl overflow-hidden border border-white/10 block">
+          <img src="https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=400&auto=format&fit=crop&q=80" alt="fix" class="w-full h-36 object-cover" />
+          <div class="p-4">
+            <span class="tag bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 mb-2 inline-block">Windows</span>
+            <h3 class="text-white font-bold text-sm">Fix Windows 11 BSOD After Update</h3>
+            <div class="text-slate-500 text-xs mt-2 flex items-center gap-2">
+              <span>5 min</span>
+              <span>•</span>
+              <span>12.4K views</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#0a0a1a] border-t border-white/5 py-10">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <a href="index.html" class="text-xl font-bold font-poppins text-white">TechFix<span class="gradient-text-cyan">Daily</span></a>
+      <p class="text-slate-500 text-sm mt-2">© 2025 TechFixDaily. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="fixed bottom-6 right-6 w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white shadow-lg opacity-0 transition-all duration-300 z-50" style="box-shadow:0 0 20px rgba(6,182,212,0.4)">
+    <i data-lucide="arrow-up" class="w-5 h-5"></i>
+  </button>
+
+  <div id="copyToast" class="fixed bottom-20 right-6 glass border border-green-500/30 text-green-400 px-4 py-2 rounded-xl text-sm font-semibold opacity-0 transition-all duration-300 z-50">✓ Link copied!</div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({duration:600,once:true});
+    lucide.createIcons();
+
+    // Reading progress
+    window.addEventListener('scroll', () => {
+      const article = document.getElementById('articleContent');
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (scrollTop / docHeight) * 100;
+      document.getElementById('progressBar').style.width = Math.min(progress, 100) + '%';
+      document.getElementById('backToTop').style.opacity = scrollTop > 300 ? '1' : '0';
+    });
+
+    function share(platform) {
+      const url = window.location.href;
+      const text = 'Fix Windows 11 Lag & Slow Performance - TechFixDaily';
+      if (platform === 'twitter') window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`);
+      else if (platform === 'facebook') window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`);
+    }
+
+    function copyLink() {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        const toast = document.getElementById('copyToast');
+        toast.style.opacity = '1';
+        setTimeout(() => toast.style.opacity = '0', 2000);
+      });
+    }
+
+    function markHelpful(yes) {
+      if (yes) {
+        const count = parseInt(document.getElementById('yesCount').textContent.replace(',',''));
+        document.getElementById('yesCount').textContent = (count+1).toLocaleString();
+        document.getElementById('yesBtn').classList.add('bg-green-500/20');
+      } else {
+        const count = parseInt(document.getElementById('noCount').textContent);
+        document.getElementById('noCount').textContent = count + 1;
+        document.getElementById('noBtn').classList.add('bg-red-500/20');
+      }
+    }
+
+    function rateArticle() {
+      document.getElementById('rateBtn').innerHTML = '⭐ Thanks for rating!';
+      document.getElementById('rateBtn').disabled = true;
+    }
+  </script>
+</body>
+</html>
